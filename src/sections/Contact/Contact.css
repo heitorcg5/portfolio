@@ -1,0 +1,123 @@
+.contact-content {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.35rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  background: rgba(18, 28, 47, 0.88);
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(111, 134, 255, 0.32);
+  min-width: 0;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(25, 211, 218, 0.5);
+}
+
+.contact-icon {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: rgba(111, 134, 255, 0.18);
+  border: 1px solid rgba(111, 134, 255, 0.35);
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.contact-value {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-cta {
+  color: #c7d5ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    text-align: left;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-link {
+    padding: 0.9rem 1rem;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .contact-main {
+    flex-basis: calc(100% - 3rem);
+  }
+
+  .contact-value {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-cta {
+    margin-left: auto;
+    padding-left: 3rem;
+  }
+}
+

@@ -1,0 +1,153 @@
+{
+    "personal": {
+      "name": "Heitor Cambre García",
+      "role": "Estudiante de Ingeniería Informática · Desarrollo de software",
+      "location": "A Coruña, España",
+      "summary": "Soy estudiante de Ingeniería Informática con un fuerte interés en el desarrollo de software y una base sólida en ingeniería del software. He desarrollado proyectos completos trabajando en backend, frontend y bases de datos, lo que me ha permitido adquirir una visión integral del desarrollo de aplicaciones.\n\nAdemás de los proyectos académicos, desarrollo proyectos propios a partir de ideas que considero útiles o interesantes, lo que me permite experimentar con nuevas tecnologías, mejorar mis habilidades técnicas y aplicar conceptos de ingeniería del software en contextos reales.\n\nDisfruto diseñando soluciones robustas y bien estructuradas, y me interesa especialmente seguir creciendo en áreas como la ciberseguridad y el uso de la inteligencia artificial como herramienta de apoyo al desarrollo de software, enfocándome en mejorar la productividad y explorar hasta qué punto puede ayudar a crear soluciones reales de forma más eficiente, aplicándola en algunos de los proyectos que estoy desarrollando."
+    },
+  
+    "education": [
+      {
+        "degree": "Grado en Ingeniería Informática",
+        "institution": "Universidade da Coruña (UDC)",
+        "status": "En curso"
+      }
+    ],
+  
+    "skills": {
+      "languages_core": [
+        "C",
+        "C#",
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "languages_secondary": [
+        "Python",
+        "MATLAB",
+        "OCaml",
+        "Dart",
+        "Flutter"
+      ],
+      "frameworks": [
+        "Spring Boot",
+        "Spring Security",
+        "React",
+        "Redux",
+        ".NET / ASP.NET",
+        "Entity Framework",
+        "Hibernate / JPA"
+      ],
+      "testing": [
+        "JUnit"
+      ],
+      "authentication": [
+        "JWT"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "tools": [
+        "Git",
+        "Docker",
+        "Maven",
+        "Yarn"
+      ],
+      "concepts": [
+        "Algoritmos y estructuras de datos",
+        "Programación orientada a objetos",
+        "Concurrencia y paralelismo",
+        "Arquitecturas MVC y MVP",
+        "Desarrollo de aplicaciones completas",
+        "APIs REST",
+        "Bases de datos relacionales",
+        "Control de versiones"
+      ],
+      "familiarity": [
+        "Bootstrap",
+        "Tailwind CSS"
+      ]
+    },
+  
+    "projects": [
+      {
+        "name": "Tienda de comercio electrónico (.NET)",
+        "type": "Proyecto académico en grupo",
+        "description": "Aplicación web de comercio electrónico desarrollada en C# y .NET con arquitectura por capas, orientada a cubrir un flujo real de tienda online de extremo a extremo: catálogo de productos con subtipos y categorías, búsqueda filtrada, carrito, proceso de compra y gestión de pedidos. El proyecto fue evaluado con una calificación de 10/10 por profesorado de la facultad.",
+        "responsibilities": [
+          "Desarrollo tanto de backend como frontend",
+          "Implementación del modelo de datos y lógica de negocio",
+          "Integración de la API de Google para inicio de sesión (OAuth 2.0)",
+          "Diseño e implementación del sistema de nube de etiquetas para comentarios",
+          "Escritura de pruebas de integración",
+          "Uso de IA como apoyo para acelerar el desarrollo y la validación del código",
+          "Trabajo colaborativo siguiendo una arquitectura por capas"
+        ],
+        "technologies": [
+          "C#",
+          ".NET",
+          "Entity Framework",
+          "PostgreSQL",
+          "OAuth 2.0 (Google Login)"
+        ],
+        "highlights": [
+          "Autenticación y autorización con roles, contraseñas cifradas e integración de login con Google (OAuth 2.0)",
+          "Gestión de catálogo con productos por subtipos y categorías, incluyendo búsqueda por texto y filtrado por categoría",
+          "Proceso de compra completo: carrito de sesión, checkout, generación de pedidos e histórico con líneas de pedido y precios unitarios",
+          "Funcionalidades Web 2.0: comentarios de producto, etiquetado y nube de etiquetas para mejorar clasificación y recuperación",
+          "Pruebas de integración automatizadas sobre servicios de la capa modelo y calificación final de 10/10"
+        ]
+      },
+      {
+        "name": "Aplicación de rutinas de gimnasio",
+        "type": "Proyecto académico en grupo",
+        "description": "Aplicación web Full Stack para la gestión y seguimiento de rutinas de gimnasio, con visualización de estadísticas y métricas de usuario.",
+        "responsibilities": [
+          "Desarrollo de funcionalidades tanto en backend como en frontend",
+          "Creación de una vista con listado de rutinas disponibles",
+          "Implementación de una sección de estadísticas de usuario con gráficos y métricas",
+          "Preparación y carga de datos en base de datos para pruebas funcionales",
+          "Integración frontend-backend mediante APIs REST"
+        ],
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "React",
+          "JavaScript",
+          "PostgreSQL",
+          "Maven",
+          "Yarn"
+        ],
+        "highlights": [
+          "Arquitectura cliente-servidor basada en APIs REST",
+          "Gestión de usuarios con login y roles",
+          "Visualización de estadísticas mediante gráficos",
+          "Experiencia práctica completa en un entorno Full Stack moderno"
+        ]
+      }
+    ],
+  
+    "interests": [
+      {
+        "area": "Desarrollo de software y arquitectura",
+        "description": "Interés en diseñar y desarrollar aplicaciones robustas, escalables y bien estructuradas, con especial atención a la arquitectura, la lógica de negocio y la calidad del software."
+      },
+      {
+        "area": "Ciberseguridad",
+        "description": "Interés en la seguridad de aplicaciones web, incluyendo autenticación, autorización, cifrado de contraseñas y buenas prácticas de desarrollo seguro."
+      },
+      {
+        "area": "Uso de inteligencia artificial en el desarrollo",
+        "description": "Uso consciente de herramientas de IA para aumentar la productividad, apoyar el diseño de soluciones, generar pruebas y mejorar la calidad del código."
+      }
+    ],
+  
+    "links": {
+      "github": "https://github.com/TU_USUARIO",
+      "linkedin": "https://linkedin.com/in/TU_USUARIO",
+      "email": "tuemail@email.com"
+    }
+  }
+  
