@@ -1,8 +1,8 @@
 {
     "personal": {
       "name": "Heitor Cambre García",
-      "role": "Estudiante de Ingeniería Informática · Desarrollo de software",
-      "location": "A Coruña, España",
+      "role": "Software Engineering Student | Backend / Full Stack",
+      "location": "A Coruña, Spain",
       "summary": "Soy estudiante de Ingeniería Informática con un fuerte interés en el desarrollo de software y una base sólida en ingeniería del software. He desarrollado proyectos completos trabajando en backend, frontend y bases de datos, lo que me ha permitido adquirir una visión integral del desarrollo de aplicaciones.\n\nAdemás de los proyectos académicos, desarrollo proyectos propios a partir de ideas que considero útiles o interesantes, lo que me permite experimentar con nuevas tecnologías, mejorar mis habilidades técnicas y aplicar conceptos de ingeniería del software en contextos reales.\n\nDisfruto diseñando soluciones robustas y bien estructuradas, y me interesa especialmente seguir creciendo en áreas como la ciberseguridad y el uso de la inteligencia artificial como herramienta de apoyo al desarrollo de software, enfocándome en mejorar la productividad y explorar hasta qué punto puede ayudar a crear soluciones reales de forma más eficiente, aplicándola en algunos de los proyectos que estoy desarrollando."
     },
   
@@ -10,7 +10,8 @@
       {
         "degree": "Grado en Ingeniería Informática",
         "institution": "Universidade da Coruña (UDC)",
-        "status": "En curso"
+        "status": "En curso",
+        "expected_graduation": "2026"
       }
     ],
   
@@ -24,9 +25,6 @@
         "CSS"
       ],
       "languages_secondary": [
-        "Python",
-        "MATLAB",
-        "OCaml",
         "Dart",
         "Flutter"
       ],
@@ -145,9 +143,10 @@
     ],
   
     "links": {
-      "github": "https://github.com/TU_USUARIO",
-      "linkedin": "https://linkedin.com/in/TU_USUARIO",
-      "email": "tuemail@email.com"
+      "github": "https://github.com/heitorcg5",
+      "linkedin": "https://www.linkedin.com/in/heitor-cambre-garc%C3%ADa-7557b8137/",
+      "email": "heitorcambre@gmail.com",
+      "portfolio": "https://heitorcambregarcia.vercel.app/"
     }
   }
   
