@@ -186,3 +186,37 @@
   }
 }
 
+@media (max-width: 932px) and (orientation: landscape) {
+  .app-topbar {
+    top: 0.35rem;
+    padding: 0 0.45rem;
+    justify-content: center;
+  }
+
+  .app-topbar-inner {
+    width: max-content;
+    max-width: calc(100vw - 0.9rem);
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.08rem 0.35rem;
+  }
+
+  .app-mark {
+    display: none;
+  }
+
+  .app-nav {
+    width: auto;
+    justify-content: center;
+    gap: 10px;
+    padding-inline: 0.1rem;
+    scroll-padding-inline: 0.45rem;
+  }
+
+  .app-nav a {
+    font-size: 0.75rem;
+    padding: 0.24rem 0.24rem;
+    line-height: 1.15;
+  }
+}
+

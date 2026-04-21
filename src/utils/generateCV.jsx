@@ -1,279 +1,264 @@
 import React from 'react';
 import { pdf, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
-// Crear estilos para el PDF
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
-    fontSize: 11,
+    padding: 26,
+    fontSize: 10,
     fontFamily: 'Helvetica',
     backgroundColor: '#ffffff',
   },
   header: {
-    marginBottom: 20,
-    borderBottom: '2 solid #667eea',
-    paddingBottom: 15,
+    marginBottom: 10,
+    borderBottom: '1 solid #2f4f8f',
+    paddingBottom: 8,
   },
   name: {
-    fontSize: 28,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 5,
+    color: '#1d2d4a',
+    marginBottom: 2,
   },
   role: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 3,
-  },
-  location: {
     fontSize: 11,
-    color: '#888',
+    color: '#384d6b',
+    marginBottom: 2,
+  },
+  headerInfo: {
+    fontSize: 9,
+    color: '#4a5e7f',
+    marginBottom: 1,
   },
   section: {
-    marginBottom: 20,
+    marginBottom: 8,
   },
   sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 10,
-    borderBottom: '1 solid #e0e0e0',
-    paddingBottom: 5,
-  },
-  text: {
     fontSize: 11,
-    color: '#333',
-    lineHeight: 1.6,
-    marginBottom: 8,
-  },
-  skillCategory: {
-    marginBottom: 12,
-  },
-  skillCategoryTitle: {
-    fontSize: 12,
     fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 5,
+    color: '#1d2d4a',
+    marginBottom: 4,
   },
-  skillItem: {
+  summaryText: {
     fontSize: 10,
-    color: '#555',
-    marginBottom: 3,
-    marginLeft: 10,
+    color: '#2f3f5f',
+    lineHeight: 1.35,
   },
   projectCard: {
-    marginBottom: 15,
-    padding: 10,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 5,
+    marginBottom: 6,
+    padding: 6,
+    border: '1 solid #d7dfef',
+    borderRadius: 4,
+    backgroundColor: '#f9fbff',
+  },
+  projectHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 2,
   },
   projectName: {
-    fontSize: 13,
+    fontSize: 10.5,
     fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 5,
+    color: '#1d2d4a',
+    flexGrow: 1,
   },
-  projectType: {
-    fontSize: 9,
-    color: '#888',
-    fontStyle: 'italic',
-    marginBottom: 5,
+  projectStatus: {
+    fontSize: 8.5,
+    color: '#2f6d47',
   },
   projectDescription: {
-    fontSize: 10,
-    color: '#555',
-    marginBottom: 8,
-    lineHeight: 1.5,
-  },
-  projectSection: {
-    marginTop: 5,
-  },
-  projectSectionTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 3,
-  },
-  projectList: {
     fontSize: 9,
-    color: '#666',
-    marginLeft: 10,
-    marginBottom: 3,
+    color: '#3d4d6b',
+    marginBottom: 2,
+    lineHeight: 1.3,
+  },
+  bullet: {
+    fontSize: 8.8,
+    color: '#42536f',
+    marginBottom: 1,
+    marginLeft: 8,
+    lineHeight: 1.3,
+  },
+  techLine: {
+    fontSize: 8.8,
+    color: '#33496e',
+    marginTop: 2,
+  },
+  twoColumn: {
+    flexDirection: 'row',
+  },
+  col: {
+    flex: 1,
+    paddingRight: 8,
+  },
+  colLast: {
+    flex: 1,
+    paddingLeft: 6,
+  },
+  miniSection: {
+    marginBottom: 6,
+  },
+  lineTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#243a5c',
+    marginBottom: 1,
+  },
+  lineText: {
+    fontSize: 9,
+    color: '#3a4f72',
+    lineHeight: 1.25,
   },
   educationItem: {
-    marginBottom: 10,
+    marginBottom: 4,
   },
   educationDegree: {
-    fontSize: 12,
+    fontSize: 9.5,
     fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 3,
+    color: '#1d2d4a',
+    marginBottom: 1,
   },
   educationInstitution: {
-    fontSize: 10,
-    color: '#666',
-    fontStyle: 'italic',
-  },
-  interestCard: {
-    marginBottom: 10,
-    padding: 8,
-    backgroundColor: '#f8f9fa',
-  },
-  interestArea: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 3,
-  },
-  interestDescription: {
-    fontSize: 10,
-    color: '#555',
-    lineHeight: 1.5,
+    fontSize: 8.8,
+    color: '#3a4f72',
   },
   languageItem: {
-    marginBottom: 5,
+    marginBottom: 2,
   },
   languageText: {
-    fontSize: 10,
-    color: '#555',
-  },
-  contactInfo: {
-    fontSize: 10,
-    color: '#666',
-    marginTop: 5,
-  },
-  row: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  column: {
-    width: '50%',
-    paddingRight: 10,
+    fontSize: 9,
+    color: '#3a4f72',
   },
 });
 
-// Componente del documento PDF
-const CVDocument = ({ profile }) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.name}>{profile.personal.name}</Text>
-        <Text style={styles.role}>{profile.personal.role}</Text>
-        <Text style={styles.location}>{profile.personal.location}</Text>
-        <View style={styles.contactInfo}>
-          {profile.links.email && <Text>Email: {profile.links.email}</Text>}
-          {profile.links.github && <Text>GitHub: {profile.links.github}</Text>}
-          {profile.links.linkedin && <Text>LinkedIn: {profile.links.linkedin}</Text>}
+const unique = (items) => [...new Set((items || []).filter(Boolean))];
+
+const compactText = (text, maxChars = 150) => {
+  if (!text) return '';
+  const oneLine = text.replace(/\s+/g, ' ').trim();
+  return oneLine.length <= maxChars ? oneLine : `${oneLine.slice(0, maxChars - 1)}…`;
+};
+
+const clampList = (list, max = 6) => unique(list).slice(0, max);
+
+const buildProfessionalSummary = (profile) => {
+  const skills = profile.skills || {};
+  const techPool = unique([
+    ...(skills.languages_core || []),
+    ...(skills.frameworks || []),
+    ...(skills.databases || []),
+  ]);
+
+  const prioritized = ['Java', 'Spring Boot', 'React', 'JavaScript', 'C#', '.NET', 'PostgreSQL'];
+  const mainTech = clampList(prioritized.filter((tech) => techPool.includes(tech)).concat(techPool), 7);
+
+  return [
+    'Experiencia desarrollando aplicaciones completas (backend, frontend y bases de datos).',
+    `Tecnologías principales: ${mainTech.join(', ')}.`,
+    'Enfoque en construir software robusto, mantenible y bien estructurado con buenas prácticas de arquitectura.',
+  ].join(' ');
+};
+
+const CVDocument = ({ profile }) => {
+  const skills = profile.skills || {};
+  const groupedSkills = {
+    Languages: clampList([...(skills.languages_core || []), ...(skills.languages_secondary || [])], 10),
+    Frameworks: clampList([...(skills.frameworks || []), ...(skills.testing || []), ...(skills.authentication || [])], 10),
+    Databases: clampList(skills.databases || [], 5),
+    Tools: clampList(skills.tools || [], 8),
+  };
+
+  const projects = (profile.projects || []).slice(0, 2).map((project) => {
+    const bullets = clampList([...(project.responsibilities || []), ...(project.highlights || [])], 4);
+    return {
+      ...project,
+      shortDescription: compactText(project.description, 140),
+      bullets,
+      shortTechnologies: clampList(project.technologies || [], 6),
+    };
+  });
+
+  const portfolioLink = profile.links?.portfolio || profile.links?.github || '';
+  const summary = buildProfessionalSummary(profile);
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View style={styles.header}>
+          <Text style={styles.name}>{profile.personal.name}</Text>
+          <Text style={styles.role}>{profile.personal.role}</Text>
+          <Text style={styles.headerInfo}>{profile.personal.location}</Text>
+          {profile.links?.email && <Text style={styles.headerInfo}>Email: {profile.links.email}</Text>}
+          {profile.links?.linkedin && <Text style={styles.headerInfo}>LinkedIn: {profile.links.linkedin}</Text>}
+          {portfolioLink && <Text style={styles.headerInfo}>Portfolio: {portfolioLink}</Text>}
         </View>
-      </View>
 
-      {/* About */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Perfil Profesional</Text>
-        <Text style={styles.text}>
-          {profile.personal.summary} Experiencia en desarrollo Full Stack con tecnologías modernas como Java, Spring Boot, React, JavaScript, C#, .NET, PostgreSQL, Docker, Kubernetes, JWT, Spring Security, y metodologías ágiles. Conocimientos sólidos en APIs REST, bases de datos relacionales, autenticación y autorización, testing, y despliegue en contenedores.
-        </Text>
-      </View>
-
-      {/* Education */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Educación</Text>
-        {profile.education.map((edu, index) => (
-          <View key={index} style={styles.educationItem}>
-            <Text style={styles.educationDegree}>{edu.degree}</Text>
-            <Text style={styles.educationInstitution}>{edu.institution} - {edu.status}</Text>
-          </View>
-        ))}
-      </View>
-
-      {/* Languages */}
-      {profile.languages && profile.languages.length > 0 && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Idiomas</Text>
-          {profile.languages.map((lang, index) => (
-            <View key={index} style={styles.languageItem}>
-              <Text style={styles.languageText}>{lang.language}: {lang.level}</Text>
+          <Text style={styles.sectionTitle}>Perfil Profesional</Text>
+          <Text style={styles.summaryText}>{summary}</Text>
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Proyectos Principales</Text>
+          {projects.map((project, index) => (
+            <View key={index} style={styles.projectCard} wrap={false}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectName}>{project.name}</Text>
+                {project.status && <Text style={styles.projectStatus}>{project.status}</Text>}
+              </View>
+              <Text style={styles.projectDescription}>{project.shortDescription}</Text>
+              {project.bullets.map((bullet, bulletIndex) => (
+                <Text key={bulletIndex} style={styles.bullet}>• {compactText(bullet, 110)}</Text>
+              ))}
+              {project.shortTechnologies.length > 0 && (
+                <Text style={styles.techLine}>Tecnologías: {project.shortTechnologies.join(', ')}</Text>
+              )}
             </View>
           ))}
         </View>
-      )}
 
-      {/* Skills */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Habilidades</Text>
-        {Object.entries(profile.skills).map(([key, skills]) => {
-          if (!skills || skills.length === 0) return null;
-          const categoryNames = {
-            languages_core: 'Lenguajes (principal)',
-            languages_secondary: 'Lenguajes (exposición académica)',
-            frameworks: 'Frameworks y plataformas',
-            testing: 'Testing',
-            authentication: 'Autenticación',
-            databases: 'Bases de datos',
-            tools: 'Herramientas de desarrollo',
-            concepts: 'Conceptos de ingeniería'
-          };
-          return (
-            <View key={key} style={styles.skillCategory}>
-              <Text style={styles.skillCategoryTitle}>{categoryNames[key] || key}:</Text>
-              <Text style={styles.skillItem}>{skills.join(' • ')}</Text>
+        <View style={styles.twoColumn}>
+          <View style={styles.col}>
+            <View style={styles.miniSection}>
+              <Text style={styles.sectionTitle}>Habilidades</Text>
+              <Text style={styles.lineTitle}>Languages</Text>
+              <Text style={styles.lineText}>{groupedSkills.Languages.join(', ')}</Text>
+              <Text style={styles.lineTitle}>Frameworks</Text>
+              <Text style={styles.lineText}>{groupedSkills.Frameworks.join(', ')}</Text>
+              <Text style={styles.lineTitle}>Databases</Text>
+              <Text style={styles.lineText}>{groupedSkills.Databases.join(', ')}</Text>
+              <Text style={styles.lineTitle}>Tools</Text>
+              <Text style={styles.lineText}>{groupedSkills.Tools.join(', ')}</Text>
             </View>
-          );
-        })}
-      </View>
+          </View>
 
-      {/* Projects */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Proyectos</Text>
-        {profile.projects.map((project, index) => (
-          <View key={index} style={styles.projectCard}>
-            <Text style={styles.projectName}>{project.name}</Text>
-            <Text style={styles.projectType}>{project.type}</Text>
-            <Text style={styles.projectDescription}>{project.description}</Text>
-            
-            {project.responsibilities && project.responsibilities.length > 0 && (
-              <View style={styles.projectSection}>
-                <Text style={styles.projectSectionTitle}>Responsabilidades:</Text>
-                {project.responsibilities.map((resp, i) => (
-                  <Text key={i} style={styles.projectList}>• {resp}</Text>
-                ))}
-              </View>
-            )}
-            
-            {project.technologies && project.technologies.length > 0 && (
-              <View style={styles.projectSection}>
-                <Text style={styles.projectSectionTitle}>Tecnologías: {project.technologies.join(', ')}</Text>
-              </View>
-            )}
-            
-            {project.highlights && project.highlights.length > 0 && (
-              <View style={styles.projectSection}>
-                <Text style={styles.projectSectionTitle}>Destacados:</Text>
-                {project.highlights.map((highlight, i) => (
-                  <Text key={i} style={styles.projectList}>• {highlight}</Text>
+          <View style={styles.colLast}>
+            <View style={styles.miniSection}>
+              <Text style={styles.sectionTitle}>Educación</Text>
+              {(profile.education || []).map((edu, index) => (
+                <View key={index} style={styles.educationItem}>
+                  <Text style={styles.educationDegree}>{edu.degree}</Text>
+                  <Text style={styles.educationInstitution}>{edu.institution} - {edu.status}</Text>
+                </View>
+              ))}
+            </View>
+
+            {profile.languages && profile.languages.length > 0 && (
+              <View style={styles.miniSection}>
+                <Text style={styles.sectionTitle}>Idiomas</Text>
+                {profile.languages.map((lang, index) => (
+                  <View key={index} style={styles.languageItem}>
+                    <Text style={styles.languageText}>{lang.language}: {lang.level}</Text>
+                  </View>
                 ))}
               </View>
             )}
           </View>
-        ))}
-      </View>
+        </View>
+      </Page>
+    </Document>
+  );
+};
 
-      {/* Interests */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Intereses</Text>
-        {profile.interests.map((interest, index) => (
-          <View key={index} style={styles.interestCard}>
-            <Text style={styles.interestArea}>{interest.area}</Text>
-            <Text style={styles.interestDescription}>{interest.description}</Text>
-          </View>
-        ))}
-      </View>
-    </Page>
-  </Document>
-);
-
-// Función para generar y descargar el PDF
 export const generateCV = async (profile) => {
   try {
     const blob = await pdf(<CVDocument profile={profile} />).toBlob();
