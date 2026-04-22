@@ -1,0 +1,192 @@
+{
+  "app": {
+    "loading": "Cargando...",
+    "nav": {
+      "ariaLabel": "Navegación principal",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "interests": "Intereses",
+      "education": "Educación",
+      "languages": "Idiomas",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "profileRole": "Estudiante de Ingeniería del Software | Backend / Full Stack",
+    "location": "A Coruña, España",
+    "title": "Desarrollador de software en formación",
+    "description": "Desarrollo aplicaciones completas con foco en backend, frontend y bases de datos, cuidando arquitectura, calidad y experiencia de usuario.",
+    "viewProjects": "Ver mis proyectos",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Correo"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "summary": "Soy estudiante de Ingeniería Informática con un fuerte interés en el desarrollo de software y una base sólida en ingeniería del software. He desarrollado proyectos completos trabajando en backend, frontend y bases de datos, lo que me ha permitido adquirir una visión integral del desarrollo de aplicaciones.\n\nAdemás de los proyectos académicos, desarrollo proyectos propios a partir de ideas que considero útiles o interesantes, lo que me permite experimentar con nuevas tecnologías, mejorar mis habilidades técnicas y aplicar conceptos de ingeniería del software en contextos reales.\n\nDisfruto diseñando soluciones robustas y bien estructuradas, y me interesa especialmente seguir creciendo en áreas como la ciberseguridad y el uso de la inteligencia artificial como herramienta de apoyo al desarrollo de software, enfocándome en mejorar la productividad y explorar hasta qué punto puede ayudar a crear soluciones reales de forma más eficiente, aplicándola en algunos de los proyectos que estoy desarrollando."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "status": {
+      "done": "Terminado",
+      "inProgress": "En desarrollo"
+    },
+    "type": {
+      "academicGroup": "Proyecto académico en grupo"
+    },
+    "sections": {
+      "responsibilities": "Responsabilidades:",
+      "technologies": "Tecnologías:",
+      "highlights": "Destacados:"
+    },
+    "items": [
+      {
+        "name": "Tienda de comercio electrónico (.NET)",
+        "description": "Aplicación web de comercio electrónico desarrollada en C# y .NET con arquitectura por capas, orientada a cubrir un flujo real de tienda online de extremo a extremo: catálogo de productos con subtipos y categorías, búsqueda filtrada, carrito, proceso de compra y gestión de pedidos. El proyecto fue evaluado con una calificación de 10/10 por profesorado de la facultad.",
+        "responsibilities": [
+          "Desarrollo Full Stack (backend, frontend y modelo de datos)",
+          "Integración de la API de Google para inicio de sesión (OAuth 2.0)",
+          "Diseño e implementación del sistema de nube de etiquetas para comentarios",
+          "Escritura de pruebas de integración",
+          "Trabajo colaborativo siguiendo una arquitectura por capas"
+        ],
+        "highlights": [
+          "Autenticación y autorización con roles, contraseñas cifradas e integración de login con Google (OAuth 2.0)",
+          "Gestión de catálogo con productos por subtipos y categorías, incluyendo búsqueda por texto y filtrado por categoría",
+          "Proceso de compra completo: carrito de sesión, checkout, generación de pedidos e histórico con líneas de pedido y precios unitarios",
+          "Funcionalidades Web 2.0: comentarios de producto, etiquetado y nube de etiquetas para mejorar clasificación y recuperación",
+          "Pruebas de integración automatizadas sobre servicios de la capa modelo y calificación final de 10/10"
+        ]
+      },
+      {
+        "name": "Aplicación de rutinas de gimnasio",
+        "description": "Aplicación web Full Stack para la gestión y seguimiento de rutinas de gimnasio, con visualización de estadísticas y métricas de usuario.",
+        "responsibilities": [
+          "Desarrollo completo del módulo de estadísticas (backend y frontend) con visualización de gráficos",
+          "Implementación de gestión de equipamiento y grupos musculares",
+          "Creación del sistema de listado y visualización de rutinas disponibles",
+          "Desarrollo de funcionalidad de bloqueo de usuarios",
+          "Preparación y carga de datos de prueba en base de datos para validación funcional",
+          "Corrección de bugs y mejoras en funcionalidades existentes"
+        ],
+        "highlights": [
+          "Sistema completo de estadísticas con múltiples tipos de gráficos (líneas, radar) y filtros temporales",
+          "Autenticación y autorización con JWT y Spring Security",
+          "Gestión de usuarios con sistema de bloqueo y seguimiento de coaches",
+          "Visualización de estadísticas mediante gráficos con Recharts",
+          "Despliegue con Docker"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "categories": {
+      "languages_core": "Lenguajes (principal)",
+      "languages_secondary": "Lenguajes (exposición académica)",
+      "frameworks": "Frameworks y plataformas",
+      "testing": "Testing",
+      "authentication": "Autenticación",
+      "databases": "Bases de datos",
+      "tools": "Herramientas de desarrollo",
+      "concepts": "Conceptos de ingeniería"
+    }
+  },
+  "interests": {
+    "title": "Intereses",
+    "items": [
+      {
+        "area": "Desarrollo de software y arquitectura",
+        "description": "Interés en diseñar y desarrollar aplicaciones robustas, escalables y bien estructuradas, con especial atención a la arquitectura, la lógica de negocio y la calidad del software."
+      },
+      {
+        "area": "Ciberseguridad",
+        "description": "Interés en la seguridad de aplicaciones web, incluyendo autenticación, autorización, cifrado de contraseñas y buenas prácticas de desarrollo seguro."
+      },
+      {
+        "area": "Uso de inteligencia artificial en el desarrollo",
+        "description": "Uso consciente de herramientas de IA para aumentar la productividad, apoyar el diseño de soluciones, generar pruebas y mejorar la calidad del código."
+      }
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "items": [
+      {
+        "degree": "Grado en Ingeniería Informática",
+        "institution": "Universidade da Coruña (UDC)",
+        "status": "En curso"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Idiomas",
+    "items": [
+      {
+        "language": "Español",
+        "level": "Nativo"
+      },
+      {
+        "language": "Gallego",
+        "level": "Nativo"
+      },
+      {
+        "language": "Inglés",
+        "level": "C1 (certificado por Cambridge)"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "Estoy abierto a oportunidades junior, colaboraciones y proyectos donde pueda aportar valor desde el primer día.",
+    "items": {
+      "email": "Correo",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "cta": {
+      "email": "Enviar mensaje",
+      "github": "Ver repositorios",
+      "linkedin": "Conectar"
+    }
+  },
+  "cv": {
+    "download": "Descargar CV",
+    "aboutText": "Estudiante de Ingeniería del Software con experiencia práctica desarrollando aplicaciones full-stack utilizando Java, JavaScript, C#, Spring Boot, React y .NET. Construyo sistemas completos desde el backend hasta el frontend, enfocándome en arquitectura limpia, fiabilidad y funcionalidad en entornos reales. Actualmente desarrollo proyectos personales para mejorar el diseño de software y la productividad utilizando herramientas modernas.",
+    "header": {
+      "email": "Correo",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "website": "Sitio web"
+    },
+    "sections": {
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "education": "Educación",
+      "languages": "Idiomas"
+    },
+    "skills": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks y plataformas",
+      "databases": "Bases de datos",
+      "tools": "Herramientas"
+    },
+    "project": {
+      "technologies": "Tecnologías",
+      "academicStatus": "Proyecto académico"
+    },
+    "errors": {
+      "generate": "Error al generar el CV:",
+      "generateRetry": "Error al generar el CV. Por favor, intenta de nuevo."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "es": "ES",
+    "en": "EN"
+  }
+}

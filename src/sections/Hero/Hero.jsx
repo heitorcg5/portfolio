@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { generateCV } from '../../utils/generateCV.jsx';
 import { FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = ({ personal, profile }) => {
+  const { t } = useTranslation();
+
   const handleDownloadCV = () => {
     if (profile) {
       generateCV(profile);
@@ -17,21 +20,21 @@ const Hero = ({ personal, profile }) => {
           <div className="hero-left">
             <h1 className="hero-name">{personal.name}</h1>
             <span className="hero-name-underline" />
-            <p className="hero-role">{personal.role}</p>
-            <p className="hero-location">{personal.location}</p>
+            <p className="hero-role">{t('hero.profileRole')}</p>
+            <p className="hero-location">{t('hero.location')}</p>
             <div className="hero-social">
               {personal.links?.github && (
-                <a href={personal.links.github} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="GitHub">
+                <a href={personal.links.github} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label={t('hero.social.github')}>
                   <FaGithub aria-hidden="true" />
                 </a>
               )}
               {personal.links?.linkedin && (
-                <a href={personal.links.linkedin} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="LinkedIn">
+                <a href={personal.links.linkedin} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label={t('hero.social.linkedin')}>
                   <FaLinkedin aria-hidden="true" />
                 </a>
               )}
               {personal.links?.email && (
-                <a href={`mailto:${personal.links.email}`} className="hero-social-link" aria-label="Email">
+                <a href={`mailto:${personal.links.email}`} className="hero-social-link" aria-label={t('hero.social.email')}>
                   <FaEnvelope aria-hidden="true" />
                 </a>
               )}
@@ -39,17 +42,15 @@ const Hero = ({ personal, profile }) => {
           </div>
 
           <div className="hero-right">
-            <h2>Desarrollador de software en formación</h2>
-            <p className="hero-right-text">
-              Desarrollo aplicaciones completas con foco en backend, frontend y bases de datos, cuidando arquitectura, calidad y experiencia de usuario.
-            </p>
+            <h2>{t('hero.title')}</h2>
+            <p className="hero-right-text">{t('hero.description')}</p>
             <div className="hero-links">
               <a href="#projects" className="hero-link">
-                Ver mis proyectos
+                {t('hero.viewProjects')}
               </a>
               <button onClick={handleDownloadCV} className="hero-link hero-link-download">
                 <FaFileDownload aria-hidden="true" />
-                <span>Descargar CV</span>
+                <span>{t('cv.download')}</span>
               </button>
             </div>
           </div>

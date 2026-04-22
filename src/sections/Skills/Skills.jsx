@@ -1,22 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Section from '../../common/Section';
 import Badge from '../../common/Badge';
 import './Skills.css';
 
 const Skills = ({ skills }) => {
+  const { t } = useTranslation();
+
   const skillCategories = [
-    { key: 'languages_core', label: 'Lenguajes (principal)', variant: 'primary' },
-    { key: 'languages_secondary', label: 'Lenguajes (exposición académica)', variant: 'secondary' },
-    { key: 'frameworks', label: 'Frameworks y plataformas', variant: 'success' },
-    { key: 'testing', label: 'Testing', variant: 'info' },
-    { key: 'authentication', label: 'Autenticación', variant: 'warning' },
-    { key: 'databases', label: 'Bases de datos', variant: 'info' },
-    { key: 'tools', label: 'Herramientas de desarrollo', variant: 'default' },
-    { key: 'concepts', label: 'Conceptos de ingeniería', variant: 'default' }
+    { key: 'languages_core', label: t('skills.categories.languages_core'), variant: 'primary' },
+    { key: 'languages_secondary', label: t('skills.categories.languages_secondary'), variant: 'secondary' },
+    { key: 'frameworks', label: t('skills.categories.frameworks'), variant: 'success' },
+    { key: 'testing', label: t('skills.categories.testing'), variant: 'info' },
+    { key: 'authentication', label: t('skills.categories.authentication'), variant: 'warning' },
+    { key: 'databases', label: t('skills.categories.databases'), variant: 'info' },
+    { key: 'tools', label: t('skills.categories.tools'), variant: 'default' },
+    { key: 'concepts', label: t('skills.categories.concepts'), variant: 'default' }
   ];
 
   return (
-    <Section id="skills" title="Habilidades">
+    <Section id="skills" title={t('skills.title')}>
       <div className="skills-content">
         {skillCategories.map((category) => {
           const skillList = skills[category.key];

@@ -1,12 +1,27 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaCheckCircle, FaClock } from 'react-icons/fa';
 import Card from '../../common/Card';
 import Badge from '../../common/Badge';
 import './ProjectCard.css';
 
-const ProjectCard = ({ project }) => {
-  const projectStatus = project.status || 'Terminado';
-  const isInProgress = projectStatus.toLowerCase().includes('desarrollo');
+const ProjectCard = ({ project, index: projectIndex }) => {
+  const { t } = useTranslation();
+  const rawProjectStatus = project.status || '';
+  const statusLower = rawProjectStatus.toLowerCase();
+  const isInProgress =
+    statusLower.includes('desarrollo') ||
+    statusLower.includes('curso') ||
+    statusLower.includes('progress');
+  const projectStatus = isInProgress
+    ? t('projects.status.inProgress', { defaultValue: rawProjectStatus || t('projects.status.done') })
+    : t('projects.status.done', { defaultValue: rawProjectStatus || t('projects.status.done') });
+  const projectType =
+    project.type === 'Proyecto académico en grupo'
+      ? t('projects.type.academicGroup')
+      : project.type;
+  const projectName = t(`projects.items.${projectIndex}.name`, { defaultValue: project.name });
+  const projectDescription = t(`projects.items.${projectIndex}.description`, { defaultValue: project.description });
 
   return (
     <Card className="project-card">
@@ -15,17 +30,19 @@ const ProjectCard = ({ project }) => {
         <span>{projectStatus}</span>
       </div>
       <div className="project-header">
-        <h3 className="project-name">{project.name}</h3>
-        <Badge variant="info" className="project-type">{project.type}</Badge>
+        <h3 className="project-name">{projectName}</h3>
+        <Badge variant="info" className="project-type">{projectType}</Badge>
       </div>
-      <p className="project-description">{project.description}</p>
+      <p className="project-description">{projectDescription}</p>
       
       {project.responsibilities && project.responsibilities.length > 0 && (
         <div className="project-section">
-          <h4 className="project-section-title">Responsabilidades:</h4>
+          <h4 className="project-section-title">{t('projects.sections.responsibilities')}</h4>
           <ul className="project-list">
-            {project.responsibilities.map((responsibility, index) => (
-              <li key={index}>{responsibility}</li>
+            {project.responsibilities.map((responsibility, responsibilityIndex) => (
+              <li key={responsibilityIndex}>
+                {t(`projects.items.${projectIndex}.responsibilities.${responsibilityIndex}`, { defaultValue: responsibility })}
+              </li>
             ))}
           </ul>
         </div>
@@ -33,7 +50,7 @@ const ProjectCard = ({ project }) => {
       
       {project.technologies && project.technologies.length > 0 && (
         <div className="project-section">
-          <h4 className="project-section-title">Tecnologías:</h4>
+          <h4 className="project-section-title">{t('projects.sections.technologies')}</h4>
           <div className="project-technologies">
             {project.technologies.map((tech, index) => (
               <Badge key={index} variant="success">{tech}</Badge>
@@ -44,10 +61,12 @@ const ProjectCard = ({ project }) => {
       
       {project.highlights && project.highlights.length > 0 && (
         <div className="project-section">
-          <h4 className="project-section-title">Destacados:</h4>
+          <h4 className="project-section-title">{t('projects.sections.highlights')}</h4>
           <ul className="project-list project-highlights">
-            {project.highlights.map((highlight, index) => (
-              <li key={index}>{highlight}</li>
+            {project.highlights.map((highlight, highlightIndex) => (
+              <li key={highlightIndex}>
+                {t(`projects.items.${projectIndex}.highlights.${highlightIndex}`, { defaultValue: highlight })}
+              </li>
             ))}
           </ul>
         </div>

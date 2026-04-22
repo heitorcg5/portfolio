@@ -2,6 +2,21 @@
   min-height: 100vh;
   background: transparent;
   position: relative;
+  will-change: opacity, transform, filter;
+  transition: opacity 0.26s ease, transform 0.26s ease, filter 0.26s ease;
+}
+
+body.lang-switching-out .App {
+  opacity: 0;
+  transform: translateY(10px) scale(0.997);
+  filter: blur(2px) saturate(0.92);
+  pointer-events: none;
+}
+
+body.lang-switching-in .App {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0) saturate(1);
 }
 
 .app-topbar {

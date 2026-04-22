@@ -1,32 +1,35 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Section from '../../common/Section';
 import './Contact.css';
 
 const Contact = ({ links }) => {
+  const { t } = useTranslation();
+
   const contactItems = [
     {
       id: 'email',
-      label: 'Email',
+      label: t('contact.items.email'),
       value: links.email,
       href: links.email ? `mailto:${links.email}` : null,
-      cta: 'Enviar mensaje',
+      cta: t('contact.cta.email'),
       Icon: FaEnvelope,
     },
     {
       id: 'github',
-      label: 'GitHub',
+      label: t('contact.items.github'),
       value: links.github,
       href: links.github,
-      cta: 'Ver repositorios',
+      cta: t('contact.cta.github'),
       Icon: FaGithub,
     },
     {
       id: 'linkedin',
-      label: 'LinkedIn',
+      label: t('contact.items.linkedin'),
       value: links.linkedin,
       href: links.linkedin,
-      cta: 'Conectar',
+      cta: t('contact.cta.linkedin'),
       Icon: FaLinkedin,
     },
   ].filter((item) => item.value && item.href);
@@ -43,11 +46,9 @@ const Contact = ({ links }) => {
   };
 
   return (
-    <Section id="contact" title="Contacto">
+    <Section id="contact" title={t('contact.title')}>
       <div className="contact-content">
-        <p className="contact-text">
-          Estoy abierto a oportunidades junior, colaboraciones y proyectos donde pueda aportar valor desde el primer dia.
-        </p>
+        <p className="contact-text">{t('contact.intro')}</p>
         <div className="contact-links">
           {contactItems.map((item) => {
             const isExternal = item.id !== 'email';

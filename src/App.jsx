@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import profileData from './data/profile.json';
 import Hero from './sections/Hero/Hero';
 import About from './sections/About/About';
@@ -8,22 +9,27 @@ import Interests from './sections/Interests/Interests';
 import Education from './sections/Education/Education';
 import Languages from './sections/Languages/Languages';
 import Contact from './sections/Contact/Contact';
+import LanguageSwitcher from './common/LanguageSwitcher';
 import './App.css';
 
 function App() {
+  const { t } = useTranslation();
   const [profile, setProfile] = useState(null);
   const [activeSection, setActiveSection] = useState('');
   const navRef = useRef(null);
   const navLinkRefs = useRef({});
-  const navItems = [
-    { id: 'about', label: 'Sobre mi' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'skills', label: 'Habilidades' },
-    { id: 'interests', label: 'Intereses' },
-    { id: 'education', label: 'Educacion' },
-    { id: 'languages', label: 'Idiomas' },
-    { id: 'contact', label: 'Contacto' },
-  ];
+  const navItems = useMemo(
+    () => [
+      { id: 'about', label: t('app.nav.about') },
+      { id: 'projects', label: t('app.nav.projects') },
+      { id: 'skills', label: t('app.nav.skills') },
+      { id: 'interests', label: t('app.nav.interests') },
+      { id: 'education', label: t('app.nav.education') },
+      { id: 'languages', label: t('app.nav.languages') },
+      { id: 'contact', label: t('app.nav.contact') },
+    ],
+    [t]
+  );
 
   useEffect(() => {
     setProfile(profileData);
@@ -79,7 +85,7 @@ function App() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, [profile]);
+  }, [profile, navItems]);
 
   useEffect(() => {
     if (!activeSection) return;
@@ -108,7 +114,7 @@ function App() {
   }, [activeSection]);
 
   if (!profile) {
-    return <div className="loading">Cargando...</div>;
+    return <div className="loading">{t('app.loading')}</div>;
   }
 
   return (
@@ -116,7 +122,7 @@ function App() {
       <header className="app-topbar">
         <div className="app-topbar-inner">
           <span className="app-mark">HC</span>
-          <nav className="app-nav" aria-label="Navegacion principal" ref={navRef}>
+          <nav className="app-nav" aria-label={t('app.nav.ariaLabel')} ref={navRef}>
             {navItems.map((item) => (
               <a
                 key={item.id}
@@ -130,6 +136,7 @@ function App() {
               </a>
             ))}
           </nav>
+          <LanguageSwitcher />
         </div>
       </header>
       <Hero personal={{ ...profile.personal, links: profile.links }} profile={profile} />

@@ -1,0 +1,192 @@
+{
+  "app": {
+    "loading": "Loading...",
+    "nav": {
+      "ariaLabel": "Main navigation",
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "interests": "Interests",
+      "education": "Education",
+      "languages": "Languages",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "profileRole": "Software Engineering Student | Backend / Full Stack",
+    "location": "A Coruña, Spain",
+    "title": "Software Developer in Training",
+    "description": "I build complete applications focused on backend, frontend, and databases, with emphasis on architecture, quality, and user experience.",
+    "viewProjects": "View my projects",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "about": {
+    "title": "About",
+    "summary": "I am a Software Engineering student with a strong interest in software development and a solid foundation in software engineering. I have built full projects working across backend, frontend, and databases, which has given me an end-to-end perspective on application development.\n\nBeyond academic projects, I also build personal projects from ideas I consider useful or interesting. This allows me to experiment with new technologies, improve my technical skills, and apply software engineering concepts in practical contexts.\n\nI enjoy designing robust and well-structured solutions, and I am especially interested in continuing to grow in cybersecurity and in using artificial intelligence as a support tool for software development, with a focus on improving productivity and exploring how far it can help create real solutions more efficiently."
+  },
+  "projects": {
+    "title": "Projects",
+    "status": {
+      "done": "Completed",
+      "inProgress": "In progress"
+    },
+    "type": {
+      "academicGroup": "Academic group project"
+    },
+    "sections": {
+      "responsibilities": "Responsibilities:",
+      "technologies": "Technologies:",
+      "highlights": "Highlights:"
+    },
+    "items": [
+      {
+        "name": "E-commerce Store (.NET)",
+        "description": "E-commerce web application built with C# and .NET using a layered architecture, designed to cover a realistic end-to-end online store flow: product catalog with subtypes and categories, filtered search, cart, checkout, and order management. The project was graded 10/10 by faculty staff.",
+        "responsibilities": [
+          "Full Stack development (backend, frontend, and data model)",
+          "Google API integration for login (OAuth 2.0)",
+          "Design and implementation of a tag cloud system for comments",
+          "Integration test development",
+          "Collaborative work following a layered architecture"
+        ],
+        "highlights": [
+          "Authentication and authorization with roles, encrypted passwords, and Google login integration (OAuth 2.0)",
+          "Catalog management with product subtypes and categories, including text search and category filters",
+          "Complete purchase flow: session cart, checkout, order generation, and order history with line items and unit prices",
+          "Web 2.0 features: product comments, tagging, and tag cloud for better classification and retrieval",
+          "Automated integration tests for model-layer services and final grade of 10/10"
+        ]
+      },
+      {
+        "name": "Gym Workout App",
+        "description": "Full Stack web application for managing and tracking gym routines, including user statistics and metric visualization.",
+        "responsibilities": [
+          "End-to-end development of the statistics module (backend and frontend) with chart visualization",
+          "Implementation of equipment and muscle group management",
+          "Creation of the routine listing and visualization system",
+          "Development of user blocking functionality",
+          "Preparation and loading of test data in the database for functional validation",
+          "Bug fixes and improvements in existing features"
+        ],
+        "highlights": [
+          "Complete statistics system with multiple chart types (line, radar) and time filters",
+          "Authentication and authorization using JWT and Spring Security",
+          "User management with a blocking system and coach tracking",
+          "Statistics visualization with Recharts",
+          "Deployment using Docker"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": {
+      "languages_core": "Core languages",
+      "languages_secondary": "Academic exposure languages",
+      "frameworks": "Frameworks and platforms",
+      "testing": "Testing",
+      "authentication": "Authentication",
+      "databases": "Databases",
+      "tools": "Development tools",
+      "concepts": "Engineering concepts"
+    }
+  },
+  "interests": {
+    "title": "Interests",
+    "items": [
+      {
+        "area": "Software development and architecture",
+        "description": "Interest in designing and building robust, scalable, and well-structured applications, with special attention to architecture, business logic, and software quality."
+      },
+      {
+        "area": "Cybersecurity",
+        "description": "Interest in web application security, including authentication, authorization, password hashing, and secure development best practices."
+      },
+      {
+        "area": "Use of AI in development",
+        "description": "Practical and conscious use of AI tools to improve productivity, support solution design, generate tests, and improve code quality."
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "degree": "Bachelor's Degree in Computer Engineering",
+        "institution": "Universidade da Coruña (UDC)",
+        "status": "In progress"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "items": [
+      {
+        "language": "Spanish",
+        "level": "Native"
+      },
+      {
+        "language": "Galician",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "C1 (Cambridge certified)"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "I am open to junior opportunities, collaborations, and projects where I can contribute value from day one.",
+    "items": {
+      "email": "Email",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "cta": {
+      "email": "Send message",
+      "github": "View repositories",
+      "linkedin": "Connect"
+    }
+  },
+  "cv": {
+    "download": "Download CV",
+    "aboutText": "Software Engineering student with hands-on experience building full-stack applications using Java, JavaScript, C#, Spring Boot, React, and .NET. I build end-to-end systems from backend to frontend, focusing on clean architecture, reliability, and functionality in real-world scenarios. I currently develop personal projects to improve software design and productivity using modern tools.",
+    "header": {
+      "email": "Email",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "website": "Website"
+    },
+    "sections": {
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "education": "Education",
+      "languages": "Languages"
+    },
+    "skills": {
+      "languages": "Languages",
+      "frameworks": "Frameworks and platforms",
+      "databases": "Databases",
+      "tools": "Tools"
+    },
+    "project": {
+      "technologies": "Technologies",
+      "academicStatus": "Academic project"
+    },
+    "errors": {
+      "generate": "Error generating CV:",
+      "generateRetry": "Error generating CV. Please try again."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "es": "ES",
+    "en": "EN"
+  }
+}
