@@ -65,7 +65,7 @@
         "name": "Aplicación de rutinas de gimnasio",
         "description": "Aplicación web Full Stack para la gestión y seguimiento de rutinas de gimnasio, con visualización de estadísticas y métricas de usuario.",
         "responsibilities": [
-          "Desarrollo completo del módulo de estadísticas (backend y frontend) con visualización de gráficos",
+          "Sistema completo de estadísticas con múltiples tipos de gráficos (líneas, radar) y filtros temporales",
           "Implementación de gestión de equipamiento y grupos musculares",
           "Creación del sistema de listado y visualización de rutinas disponibles",
           "Desarrollo de funcionalidad de bloqueo de usuarios",
@@ -155,7 +155,7 @@
   },
   "cv": {
     "download": "Descargar CV",
-    "aboutText": "Estudiante de Ingeniería del Software con experiencia práctica desarrollando aplicaciones full-stack utilizando Java, JavaScript, C#, Spring Boot, React y .NET. Construyo sistemas completos desde el backend hasta el frontend, enfocándome en arquitectura limpia, fiabilidad y funcionalidad en entornos reales. Actualmente desarrollo proyectos personales para mejorar el diseño de software y la productividad utilizando herramientas modernas.",
+    "aboutText": "Estudiante de Ingeniería del Software con experiencia práctica desarrollando aplicaciones full-stack de principio a fin, desde el modelo de datos hasta el frontend, cuidando la arquitectura y la calidad del código. Más allá de los proyectos académicos, construyo proyectos propios para explorar nuevas tecnologías — actualmente con foco en ciberseguridad e IA aplicada al desarrollo. Busco prácticas en desarrollo de software donde pueda contribuir y aprender en un entorno profesional real.",
     "header": {
       "email": "Correo",
       "github": "GitHub",
@@ -177,7 +177,9 @@
     },
     "project": {
       "technologies": "Tecnologías",
-      "academicStatus": "Proyecto académico"
+      "academicStatus": "Proyecto académico",
+      "firstStatus": "Proyecto Full Stack | Calificación: 10/10",
+      "secondStatus": "Proyecto Full Stack | Spring Boot + React"
     },
     "errors": {
       "generate": "Error al generar el CV:",

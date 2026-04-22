@@ -65,7 +65,7 @@
         "name": "Gym Workout App",
         "description": "Full Stack web application for managing and tracking gym routines, including user statistics and metric visualization.",
         "responsibilities": [
-          "End-to-end development of the statistics module (backend and frontend) with chart visualization",
+          "Complete statistics system with multiple chart types (line, radar) and time filters",
           "Implementation of equipment and muscle group management",
           "Creation of the routine listing and visualization system",
           "Development of user blocking functionality",
@@ -155,7 +155,7 @@
   },
   "cv": {
     "download": "Download CV",
-    "aboutText": "Software Engineering student with hands-on experience building full-stack applications using Java, JavaScript, C#, Spring Boot, React, and .NET. I build end-to-end systems from backend to frontend, focusing on clean architecture, reliability, and functionality in real-world scenarios. I currently develop personal projects to improve software design and productivity using modern tools.",
+    "aboutText": "Software Engineering student with hands-on experience building full-stack applications end to end, from data model to frontend, with a strong focus on architecture and code quality. Beyond academic projects, I build personal projects to explore new technologies — currently focused on cybersecurity and AI applied to development. I am looking for software development internships where I can contribute and learn in a real professional environment.",
     "header": {
       "email": "Email",
       "github": "GitHub",
@@ -177,7 +177,9 @@
     },
     "project": {
       "technologies": "Technologies",
-      "academicStatus": "Academic project"
+      "academicStatus": "Academic project",
+      "firstStatus": "Full Stack Project | Grade: 10/10",
+      "secondStatus": "Full Stack Project | Spring Boot + React"
     },
     "errors": {
       "generate": "Error generating CV:",

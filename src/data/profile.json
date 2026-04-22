@@ -98,7 +98,7 @@
       "status": "Terminado",
       "description": "Aplicación web Full Stack para la gestión y seguimiento de rutinas de gimnasio, con visualización de estadísticas y métricas de usuario.",
       "responsibilities": [
-        "Desarrollo completo del módulo de estadísticas (backend y frontend) con visualización de gráficos",
+        "Sistema completo de estadísticas con múltiples tipos de gráficos (líneas, radar) y filtros temporales",
         "Implementación de gestión de equipamiento y grupos musculares",
         "Creación del sistema de listado y visualización de rutinas disponibles",
         "Desarrollo de funcionalidad de bloqueo de usuarios",
@@ -159,7 +159,7 @@
   ],
   "links": {
     "github": "https://github.com/heitorcg5",
-    "linkedin": "https://www.linkedin.com/in/heitor-cambre-garc%C3%ADa-7557b8137/",
+    "linkedin": "https://www.linkedin.com/in/heitorcambregarcia/",
     "email": "heitorcambre@gmail.com",
     "portfolio": "https://heitorcambregarcia.vercel.app/"
   }
