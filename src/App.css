@@ -2,21 +2,15 @@
   min-height: 100vh;
   background: transparent;
   position: relative;
-  will-change: opacity, transform, filter;
-  transition: opacity 0.26s ease, transform 0.26s ease, filter 0.26s ease;
+  transition: opacity 0.22s ease;
 }
 
 body.lang-switching-out .App {
-  opacity: 0;
-  transform: translateY(10px) scale(0.997);
-  filter: blur(2px) saturate(0.92);
-  pointer-events: none;
+  opacity: 0.2;
 }
 
 body.lang-switching-in .App {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0) saturate(1);
 }
 
 .app-topbar {
@@ -24,11 +18,12 @@ body.lang-switching-in .App {
   top: 0.6rem;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 9999;
   padding: 0 1rem;
   display: flex;
   justify-content: center;
   background: transparent;
+  pointer-events: none;
 }
 
 .app-topbar-inner {
@@ -45,6 +40,7 @@ body.lang-switching-in .App {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
+  pointer-events: auto;
 }
 
 .app-mark {
@@ -93,6 +89,7 @@ body.lang-switching-in .App {
   white-space: nowrap;
   flex: 0 0 auto;
   transition: color 0.28s ease, transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  pointer-events: auto;
 }
 
 .app-nav a::after {
