@@ -17,6 +17,15 @@
   border: 1px solid transparent;
 }
 
+.project-status-icon {
+  display: inline-block;
+}
+
+.project-status-icon-spinning {
+  animation: project-status-spin 1.6s linear infinite;
+  transform-origin: center;
+}
+
 .project-status-done {
   color: #d5ffe8;
   background: rgba(40, 199, 111, 0.16);
@@ -30,11 +39,7 @@
 }
 
 .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: block;
 }
 
 .project-name {
@@ -42,11 +47,11 @@
   font-weight: 600;
   color: var(--text-main);
   margin: 0;
-  flex: 1;
 }
 
 .project-type {
-  white-space: nowrap;
+  display: inline-flex;
+  margin-top: 0.6rem;
 }
 
 .project-description {
@@ -99,14 +104,44 @@
   gap: 0.5rem;
 }
 
+.project-repo-section {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.project-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(111, 134, 255, 0.35);
+  background: rgba(111, 134, 255, 0.14);
+  color: #dfe6ff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.project-repo-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(25, 211, 218, 0.5);
+  color: #ffffff;
+  background: rgba(25, 211, 218, 0.16);
+}
+
+@keyframes project-status-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 768px) {
   .project-name {
     font-size: 1.3rem;
-  }
-  
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 

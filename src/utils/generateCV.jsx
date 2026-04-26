@@ -168,6 +168,13 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginBottom: 2,
   },
+  repoLink: {
+    fontFamily: 'Helvetica',
+    fontSize: 7.6,
+    color: '#2563eb',
+    textDecoration: 'none',
+    marginTop: 3,
+  },
   techTagsRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -277,14 +284,14 @@ const toShortLink = (url) => {
 /** Etiqueta mostrada en el CV (ATS): localiza estado terminado/en desarrollo. */
 const cvProjectStatusLabel = (status, t, projectIndex) => {
   if (!status) return '';
-  if (projectIndex === 0) {
+  if (projectIndex === 1) {
     return t('cv.project.firstStatus', {
       defaultValue: t('cv.project.academicStatus', {
         defaultValue: t('projects.status.done', { defaultValue: status }),
       }),
     });
   }
-  if (projectIndex === 1) {
+  if (projectIndex === 2) {
     return t('cv.project.secondStatus', {
       defaultValue: t('cv.project.academicStatus', {
         defaultValue: t('projects.status.done', { defaultValue: status }),
@@ -306,7 +313,7 @@ const CVDocument = ({ profile, lang }) => {
   const t = getCvT(lang);
   const skills = profile.skills || {};
 
-  const projects = (profile.projects || []).slice(0, 2).map((project, projectIndex) => {
+  const projects = (profile.projects || []).slice(0, 3).map((project, projectIndex) => {
     const responsibilities = unique(project.responsibilities || []).filter(Boolean);
     const filtered = responsibilities.filter((line) => !isRoutineResponsibility(line));
     const responsibilityBullets = filtered.slice(0, MAX_PROJECT_BULLETS);
@@ -478,6 +485,11 @@ const CVDocument = ({ profile, lang }) => {
                           ))}
                         </View>
                       </>
+                    ) : null}
+                    {project.github ? (
+                      <Link src={project.github} style={styles.repoLink}>
+                        {t('cv.project.repository', { defaultValue: 'Repository' })}: {toShortLink(project.github)}
+                      </Link>
                     ) : null}
                   </View>
                 );

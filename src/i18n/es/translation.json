@@ -30,12 +30,14 @@
   },
   "projects": {
     "title": "Proyectos",
+    "viewRepository": "Ver repositorio",
     "status": {
       "done": "Terminado",
       "inProgress": "En desarrollo"
     },
     "type": {
-      "academicGroup": "Proyecto académico en grupo"
+      "academicGroup": "Proyecto académico en grupo",
+      "personal": "Proyecto personal"
     },
     "sections": {
       "responsibilities": "Responsabilidades:",
@@ -43,6 +45,26 @@
       "highlights": "Destacados:"
     },
     "items": [
+      {
+        "name": "Synapse",
+        "description": "Aplicación full-stack orientada a convertir información dispersa en conocimiento accionable: permite capturar enlaces, videos, texto y documentos; procesarlos con IA local; organizarlos en carpetas y etiquetas; y exportarlos en Markdown, JSON o PDF. Incluye arquitectura modular, flujo de procesamiento asíncrono y sistema de notificaciones para un uso real de productividad.",
+        "responsibilities": [
+          "Arquitectura full-stack con Spring Boot, React y PostgreSQL",
+          "Autenticación JWT y APIs REST seguras",
+          "Diseño modular del backend con múltiples módulos funcionales",
+          "Integración con Ollama: procesamiento asincrónico de contenido con reintentos automáticos y fallback graceful",
+          "Sistema de notificaciones y flujo de procesamiento de contenido",
+          "Exportación de datos en Markdown, JSON y PDF",
+          "Despliegue mediante Docker"
+        ],
+        "highlights": [
+          "Arquitectura Full Stack robusta y escalable con Java 17 + Spring Boot 3 + React 18",
+          "Backend modular con separación clara por dominios funcionales",
+          "Integración de IA local para enriquecer contenido sin depender de servicios externos",
+          "Pipeline de captura y organización de información por carpetas y etiquetas",
+          "Exportaciones multi-formato para portabilidad de conocimiento"
+        ]
+      },
       {
         "name": "Tienda de comercio electrónico (.NET)",
         "description": "Aplicación web de comercio electrónico desarrollada en C# y .NET con arquitectura por capas, orientada a cubrir un flujo real de tienda online de extremo a extremo: catálogo de productos con subtipos y categorías, búsqueda filtrada, carrito, proceso de compra y gestión de pedidos. El proyecto fue evaluado con una calificación de 10/10 por profesorado de la facultad.",
@@ -179,7 +201,8 @@
       "technologies": "Tecnologías",
       "academicStatus": "Proyecto académico",
       "firstStatus": "Proyecto Full Stack | Calificación: 10/10",
-      "secondStatus": "Proyecto Full Stack | Spring Boot + React"
+      "secondStatus": "Proyecto Full Stack | Spring Boot + React",
+      "repository": "Repositorio"
     },
     "errors": {
       "generate": "Error al generar el CV:",

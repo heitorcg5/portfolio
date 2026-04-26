@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaCheckCircle, FaClock } from 'react-icons/fa';
+import { FaCheckCircle, FaCode } from 'react-icons/fa';
 import Card from '../../common/Card';
 import Badge from '../../common/Badge';
 import './ProjectCard.css';
@@ -19,14 +19,20 @@ const ProjectCard = ({ project, index: projectIndex }) => {
   const projectType =
     project.type === 'Proyecto académico en grupo'
       ? t('projects.type.academicGroup')
-      : project.type;
+      : project.type === 'Proyecto personal'
+        ? t('projects.type.personal')
+        : project.type;
   const projectName = t(`projects.items.${projectIndex}.name`, { defaultValue: project.name });
   const projectDescription = t(`projects.items.${projectIndex}.description`, { defaultValue: project.description });
 
   return (
     <Card className="project-card">
       <div className={`project-status ${isInProgress ? 'project-status-progress' : 'project-status-done'}`}>
-        {isInProgress ? <FaClock aria-hidden="true" /> : <FaCheckCircle aria-hidden="true" />}
+        {isInProgress ? (
+          <FaCode aria-hidden="true" className="project-status-icon project-status-icon-spinning" />
+        ) : (
+          <FaCheckCircle aria-hidden="true" className="project-status-icon" />
+        )}
         <span>{projectStatus}</span>
       </div>
       <div className="project-header">
@@ -69,6 +75,19 @@ const ProjectCard = ({ project, index: projectIndex }) => {
               </li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {project.github && (
+        <div className="project-section project-repo-section">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-repo-link"
+          >
+            {t('projects.viewRepository')}
+          </a>
         </div>
       )}
     </Card>

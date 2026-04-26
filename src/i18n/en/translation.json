@@ -30,12 +30,14 @@
   },
   "projects": {
     "title": "Projects",
+    "viewRepository": "View repository",
     "status": {
       "done": "Completed",
       "inProgress": "In progress"
     },
     "type": {
-      "academicGroup": "Academic group project"
+      "academicGroup": "Academic group project",
+      "personal": "Personal project"
     },
     "sections": {
       "responsibilities": "Responsibilities:",
@@ -43,6 +45,26 @@
       "highlights": "Highlights:"
     },
     "items": [
+      {
+        "name": "Synapse",
+        "description": "Full-stack application focused on turning scattered information into actionable knowledge: it allows capturing links, videos, text, and documents; processing them with local AI; organizing them into folders and tags; and exporting them as Markdown, JSON, or PDF. It includes a modular architecture, asynchronous processing workflow, and notification system for real productivity use cases.",
+        "responsibilities": [
+          "Full-stack architecture with Spring Boot, React, and PostgreSQL",
+          "JWT authentication and secure REST APIs",
+          "Modular backend design with multiple functional modules",
+          "Ollama integration: asynchronous content processing with automatic retries and graceful fallback",
+          "Notification system and content processing workflow",
+          "Data export features in Markdown, JSON, and PDF",
+          "Docker-based deployment"
+        ],
+        "highlights": [
+          "Robust and scalable Full Stack architecture with Java 17 + Spring Boot 3 + React 18",
+          "Modular backend with clear separation by functional domains",
+          "Local AI integration to enrich content without external dependencies",
+          "Capture and organization pipeline using folders and tags",
+          "Multi-format exports for knowledge portability"
+        ]
+      },
       {
         "name": "E-commerce Store (.NET)",
         "description": "E-commerce web application built with C# and .NET using a layered architecture, designed to cover a realistic end-to-end online store flow: product catalog with subtypes and categories, filtered search, cart, checkout, and order management. The project was graded 10/10 by faculty staff.",
@@ -179,7 +201,8 @@
       "technologies": "Technologies",
       "academicStatus": "Academic project",
       "firstStatus": "Full Stack Project | Grade: 10/10",
-      "secondStatus": "Full Stack Project | Spring Boot + React"
+      "secondStatus": "Full Stack Project | Spring Boot + React",
+      "repository": "Repository"
     },
     "errors": {
       "generate": "Error generating CV:",

@@ -1,4 +1,4 @@
-import { pdf, Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer';
+import { pdf, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 // Crear estilos para el PDF
 const styles = StyleSheet.create({
@@ -221,6 +221,12 @@ const CVDocument = ({ profile }) => (
             {project.technologies && project.technologies.length > 0 && (
               <View style={styles.projectSection}>
                 <Text style={styles.projectSectionTitle}>Tecnologías: {project.technologies.join(', ')}</Text>
+              </View>
+            )}
+
+            {project.github && (
+              <View style={styles.projectSection}>
+                <Text style={styles.projectSectionTitle}>Repositorio: {project.github}</Text>
               </View>
             )}
             

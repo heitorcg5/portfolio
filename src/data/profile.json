@@ -66,9 +66,45 @@
   },
   "projects": [
     {
+      "name": "Synapse",
+      "type": "Proyecto personal",
+      "status": "En desarrollo",
+      "description": "Aplicación full-stack orientada a convertir información dispersa en conocimiento accionable: permite capturar enlaces, videos, texto y documentos; procesarlos con IA local; organizarlos en carpetas y etiquetas; y exportarlos en Markdown, JSON o PDF. Incluye arquitectura modular, flujo de procesamiento asíncrono y sistema de notificaciones para un uso real de productividad.",
+      "responsibilities": [
+        "Arquitectura full-stack con Spring Boot, React y PostgreSQL",
+        "Autenticación JWT y APIs REST seguras",
+        "Diseño modular del backend con múltiples módulos funcionales",
+        "Integración con Ollama: procesamiento asincrónico de contenido con reintentos automáticos y fallback graceful",
+        "Sistema de notificaciones y flujo de procesamiento de contenido",
+        "Exportación de datos en Markdown, JSON y PDF",
+        "Despliegue mediante Docker"
+      ],
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "PostgreSQL",
+        "React",
+        "TypeScript",
+        "Docker",
+        "JWT",
+        "REST API",
+        "Ollama AI"
+      ],
+      "highlights": [
+        "Arquitectura Full Stack robusta y escalable con Java 17 + Spring Boot 3 + React 18",
+        "Backend modular con separación clara por dominios funcionales",
+        "Integración de IA local para enriquecer contenido sin depender de servicios externos",
+        "Pipeline de captura y organización de información por carpetas y etiquetas",
+        "Exportaciones multi-formato para portabilidad de conocimiento"
+      ],
+      "github": "https://github.com/heitorcg5/Synapse"
+    },
+    {
       "name": "Tienda de comercio electrónico (.NET)",
       "type": "Proyecto académico en grupo",
       "status": "Terminado",
+      "github": "https://github.com/heitorcg5/MaD-.NET.git",
       "description": "Aplicación web de comercio electrónico desarrollada en C# y .NET con arquitectura por capas, orientada a cubrir un flujo real de tienda online de extremo a extremo: catálogo de productos con subtipos y categorías, búsqueda filtrada, carrito, proceso de compra y gestión de pedidos. El proyecto fue evaluado con una calificación de 10/10 por profesorado de la facultad.",
       "responsibilities": [
         "Desarrollo Full Stack (backend, frontend y modelo de datos)",
@@ -161,7 +197,6 @@
     "github": "https://github.com/heitorcg5",
     "linkedin": "https://www.linkedin.com/in/heitorcambregarcia/",
     "email": "heitorcambre@gmail.com",
-    "portfolio": "https://heitorcambregarcia.vercel.app/"
+    "portfolio": "https://heitorcambregarcia.com/"
   }
 }
-
