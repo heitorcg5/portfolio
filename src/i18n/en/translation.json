@@ -47,22 +47,15 @@
     "items": [
       {
         "name": "Synapse",
-        "description": "Full-stack application focused on turning scattered information into actionable knowledge: it allows capturing links, videos, text, and documents; processing them with local AI; organizing them into folders and tags; and exporting them as Markdown, JSON, or PDF. It includes a modular architecture, asynchronous processing workflow, and notification system for real productivity use cases.",
-        "responsibilities": [
-          "Full-stack architecture with Spring Boot, React, and PostgreSQL",
-          "JWT authentication and secure REST APIs",
-          "Modular backend design with multiple functional modules",
-          "Ollama integration: asynchronous content processing with automatic retries and graceful fallback",
-          "Notification system and content processing workflow",
-          "Data export features in Markdown, JSON, and PDF",
-          "Docker-based deployment"
-        ],
+        "started": "Project started: February 2026",
+        "description": "Personal web application aimed at giving a convenient outlet for everything we tend to leave \"for later\": notes, links, and snippets that otherwise get lost. The flow helps classify and retrieve that information without friction, and uses notifications to remind you of pending items and material still to review. It is under active development: on the roadmap are features for broader use cases, such as flashcards linked to the folders the user defines.",
+        "responsibilities": [],
         "highlights": [
-          "Robust and scalable Full Stack architecture with Java 17 + Spring Boot 3 + React 18",
-          "Modular backend with clear separation by functional domains",
-          "Local AI integration to enrich content without external dependencies",
-          "Capture and organization pipeline using folders and tags",
-          "Multi-format exports for knowledge portability"
+          "Production-grade full stack: Spring Boot (Java) API and React + TypeScript (Vite) client, web app with a real end-to-end flow (capture → inbox → processing → knowledge).",
+          "Product-focused web UX: responsive UI, coherent routing and application state; internationalization (i18n) to use the app in multiple languages from the browser.",
+          "Data and deployment: PostgreSQL with Flyway migrations, domain model covering inbox, knowledge, and notifications; documentation and Docker Compose to run the stack.",
+          "AI in the workflow: asynchronous processing pipeline with configurable Ollama integration, emphasizing resilience when the model or network fails.",
+          "Security and operations: JWT authentication, careful handling of secrets and API errors with traceability (trace id), without exposing internal details to clients."
         ]
       },
       {
@@ -136,6 +129,7 @@
   },
   "education": {
     "title": "Education",
+    "availability": "Available to join from July 2026",
     "items": [
       {
         "degree": "Bachelor's Degree in Computer Engineering",
@@ -202,7 +196,8 @@
       "academicStatus": "Academic project",
       "firstStatus": "Full Stack Project | Grade: 10/10",
       "secondStatus": "Full Stack Project | Spring Boot + React",
-      "repository": "Repository"
+      "repository": "Repository",
+      "synapseInProgressDetail": "In development · since February 2026"
     },
     "errors": {
       "generate": "Error generating CV:",

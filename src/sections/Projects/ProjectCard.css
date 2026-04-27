@@ -60,6 +60,13 @@
   margin: 0;
 }
 
+.project-started {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: #9fb0d8;
+  font-weight: 500;
+}
+
 .project-section {
   margin-top: 0.5rem;
 }

@@ -17,9 +17,12 @@ const Education = ({ education }) => {
               <h3 className="education-degree">
                 {t(`education.items.${index}.degree`, { defaultValue: edu.degree })}
               </h3>
-              <Badge variant="info">
-                {t(`education.items.${index}.status`, { defaultValue: edu.status })}
-              </Badge>
+              <div className="education-status-row">
+                <Badge variant="info">
+                  {t(`education.items.${index}.status`, { defaultValue: edu.status })}
+                </Badge>
+                <span className="education-availability">{t('education.availability')}</span>
+              </div>
             </div>
             <p className="education-institution">
               {t(`education.items.${index}.institution`, { defaultValue: edu.institution })}

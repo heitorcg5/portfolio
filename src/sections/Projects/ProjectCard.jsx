@@ -40,7 +40,12 @@ const ProjectCard = ({ project, index: projectIndex }) => {
         <Badge variant="info" className="project-type">{projectType}</Badge>
       </div>
       <p className="project-description">{projectDescription}</p>
-      
+      {project.started ? (
+        <p className="project-started">
+          {t(`projects.items.${projectIndex}.started`, { defaultValue: project.started })}
+        </p>
+      ) : null}
+
       {project.responsibilities && project.responsibilities.length > 0 && (
         <div className="project-section">
           <h4 className="project-section-title">{t('projects.sections.responsibilities')}</h4>

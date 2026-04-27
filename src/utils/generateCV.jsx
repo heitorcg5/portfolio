@@ -9,6 +9,9 @@ import i18n from '../i18n';
 
 const bulletSep = ' • ';
 
+/** Excluye entradas concretas solo en el CV (la web conserva profile.json tal cual). */
+const CV_LANGUAGES_EXCLUDE = new Set(['Dart']);
+
 /** Grupos compactos para el PDF (sin Testing/Auth/Conceptos como apartados; van en frameworks). */
 const CV_SKILL_GROUPS = [
   { labelKey: 'cv.skills.languages', keys: ['languages_core', 'languages_secondary'] },
@@ -17,8 +20,8 @@ const CV_SKILL_GROUPS = [
   { labelKey: 'cv.skills.tools', keys: ['tools'] },
 ];
 
-const MAX_PROJECT_BULLETS = 4;
-const MAX_TECH_ITEMS = 9;
+const MAX_PROJECT_BULLETS = 5;
+const MAX_TECH_ITEMS = 12;
 
 /** Excluye viñetas rutinarias del CV de una página. */
 const isRoutineResponsibility = (line) => {
@@ -233,7 +236,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica',
     fontSize: 7.5,
     color: '#4b5563',
-    lineHeight: 1.2,
+    lineHeight: 1.25,
+    marginTop: 2,
   },
   languageItem: {
     marginBottom: 2,
@@ -266,8 +270,8 @@ const compactText = (text, maxChars = 150) => {
   return `${cut}${ellipsis}`;
 };
 
-const PROJECT_DESC_MAX = 420;
-const BULLET_MAX = 140;
+const PROJECT_DESC_MAX = 500;
+const BULLET_MAX = 220;
 
 const getCvT = (lang) => i18n.getFixedT(lang || 'es');
 
@@ -284,6 +288,20 @@ const toShortLink = (url) => {
 /** Etiqueta mostrada en el CV (ATS): localiza estado terminado/en desarrollo. */
 const cvProjectStatusLabel = (status, t, projectIndex) => {
   if (!status) return '';
+  // Synapse (primer proyecto): incluir fecha de inicio junto al estado
+  if (projectIndex === 0) {
+    const raw = status.toLowerCase();
+    const inProgress =
+      raw.includes('desarrollo') ||
+      raw.includes('curso') ||
+      raw.includes('progress');
+    if (inProgress) {
+      return t('cv.project.synapseInProgressDetail', {
+        defaultValue: 'En desarrollo · desde febrero de 2026',
+      });
+    }
+    return t('projects.status.done', { defaultValue: status });
+  }
   if (projectIndex === 1) {
     return t('cv.project.firstStatus', {
       defaultValue: t('cv.project.academicStatus', {
@@ -315,14 +333,21 @@ const CVDocument = ({ profile, lang }) => {
 
   const projects = (profile.projects || []).slice(0, 3).map((project, projectIndex) => {
     const responsibilities = unique(project.responsibilities || []).filter(Boolean);
-    const filtered = responsibilities.filter((line) => !isRoutineResponsibility(line));
-    const responsibilityBullets = filtered.slice(0, MAX_PROJECT_BULLETS);
+    const filteredResp = responsibilities.filter((line) => !isRoutineResponsibility(line));
+    const highlights = unique(project.highlights || []).filter(Boolean);
+    const useHighlightsForCv = filteredResp.length === 0 && highlights.length > 0;
+    const sourceLines = useHighlightsForCv ? highlights : filteredResp;
+    const responsibilityBullets = sourceLines.slice(0, MAX_PROJECT_BULLETS);
     const techItems = unique(project.technologies || []).filter(Boolean).slice(0, MAX_TECH_ITEMS);
 
-    const translatedResponsibilities = responsibilityBullets.map((line, responsibilityIndex) =>
-      t(`projects.items.${projectIndex}.responsibilities.${responsibilityIndex}`, {
-        defaultValue: line,
-      })
+    const translatedResponsibilities = responsibilityBullets.map((line, bulletIndex) =>
+      useHighlightsForCv
+        ? t(`projects.items.${projectIndex}.highlights.${bulletIndex}`, {
+            defaultValue: line,
+          })
+        : t(`projects.items.${projectIndex}.responsibilities.${bulletIndex}`, {
+            defaultValue: line,
+          })
     );
 
     return {
@@ -343,7 +368,10 @@ const CVDocument = ({ profile, lang }) => {
   const portfolioLink = profile.links?.portfolio || profile.links?.github || '';
 
   const skillCategoryBlocks = CV_SKILL_GROUPS.map(({ labelKey, keys }) => {
-    const list = unique(keys.flatMap((k) => skills[k] || [])).filter(Boolean);
+    let list = unique(keys.flatMap((k) => skills[k] || [])).filter(Boolean);
+    if (labelKey === 'cv.skills.languages') {
+      list = list.filter((item) => !CV_LANGUAGES_EXCLUDE.has(item));
+    }
     return { key: labelKey, label: t(labelKey), list };
   }).filter((b) => b.list.length > 0);
 
@@ -424,6 +452,8 @@ const CVDocument = ({ profile, lang }) => {
                   </Text>
                   <Text style={styles.educationStatus}>
                     {t(`education.items.${index}.status`, { defaultValue: edu.status })}
+                    {' · '}
+                    {t('education.availability')}
                   </Text>
                 </View>
               ))}

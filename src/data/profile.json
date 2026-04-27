@@ -69,34 +69,30 @@
       "name": "Synapse",
       "type": "Proyecto personal",
       "status": "En desarrollo",
-      "description": "Aplicación full-stack orientada a convertir información dispersa en conocimiento accionable: permite capturar enlaces, videos, texto y documentos; procesarlos con IA local; organizarlos en carpetas y etiquetas; y exportarlos en Markdown, JSON o PDF. Incluye arquitectura modular, flujo de procesamiento asíncrono y sistema de notificaciones para un uso real de productividad.",
-      "responsibilities": [
-        "Arquitectura full-stack con Spring Boot, React y PostgreSQL",
-        "Autenticación JWT y APIs REST seguras",
-        "Diseño modular del backend con múltiples módulos funcionales",
-        "Integración con Ollama: procesamiento asincrónico de contenido con reintentos automáticos y fallback graceful",
-        "Sistema de notificaciones y flujo de procesamiento de contenido",
-        "Exportación de datos en Markdown, JSON y PDF",
-        "Despliegue mediante Docker"
-      ],
+      "started": "Inicio del proyecto: febrero de 2026",
+      "description": "Aplicación web personal orientada a dar salida cómoda a todo lo que solemos dejar \"para después\": notas, enlaces y fragmentos que acaban perdiéndose. El flujo ayuda a clasificar y recuperar esa información sin fricción y usa notificaciones para recordar pendientes y material sin revisar. Sigue en evolución activa: en el horizonte hay funcionalidades para usos más amplios, como flashcards asociadas a las carpetas que el usuario define.",
+      "responsibilities": [],
       "technologies": [
         "Java",
         "Spring Boot",
         "Spring Security",
         "PostgreSQL",
+        "Flyway",
         "React",
         "TypeScript",
+        "Vite",
         "Docker",
+        "Docker Compose",
         "JWT",
         "REST API",
         "Ollama AI"
       ],
       "highlights": [
-        "Arquitectura Full Stack robusta y escalable con Java 17 + Spring Boot 3 + React 18",
-        "Backend modular con separación clara por dominios funcionales",
-        "Integración de IA local para enriquecer contenido sin depender de servicios externos",
-        "Pipeline de captura y organización de información por carpetas y etiquetas",
-        "Exportaciones multi-formato para portabilidad de conocimiento"
+        "Full stack productivo: API en Spring Boot (Java) y cliente en React + TypeScript (Vite), aplicación web con flujo real de uso (captura → bandeja → procesamiento → conocimiento).",
+        "Experiencia de producto web: interfaz responsive, rutas y estado de aplicación coherentes; internacionalización (i18n) para usar la app en varios idiomas desde el navegador.",
+        "Datos y despliegue: PostgreSQL con migraciones (Flyway), modelo de dominio con bandeja, conocimiento y notificaciones; documentación y Docker Compose para levantar el stack.",
+        "IA en el flujo: pipeline de procesamiento asíncrono con integración Ollama (configurable), con enfoque en resiliencia cuando el modelo o la red fallan.",
+        "Seguridad y operación: autenticación JWT, manejo cuidadoso de secretos y errores API con trazabilidad (trace id), sin exponer detalles internos al cliente."
       ],
       "github": "https://github.com/heitorcg5/Synapse"
     },
