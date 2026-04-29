@@ -128,8 +128,9 @@
       "name": "Aplicación de rutinas de gimnasio",
       "type": "Proyecto académico en grupo",
       "status": "Terminado",
-      "description": "Aplicación web Full Stack para la gestión y seguimiento de rutinas de gimnasio, con visualización de estadísticas y métricas de usuario.",
+      "description": "Aplicación web Full Stack para rutinas de gimnasio, estadísticas y métricas de usuario. Equipo de siete con Scrum, Kanban y XP; participación activa en un entorno colaborativo donde me desenvolví con soltura.",
       "responsibilities": [
+        "Scrum, Kanban y XP en equipo de siete; coordinación y comunicación durante el proyecto",
         "Sistema completo de estadísticas con múltiples tipos de gráficos (líneas, radar) y filtros temporales",
         "Implementación de gestión de equipamiento y grupos musculares",
         "Creación del sistema de listado y visualización de rutinas disponibles",
@@ -153,6 +154,7 @@
         "Yarn"
       ],
       "highlights": [
+        "Metodologías ágiles (Scrum, Kanban, XP) en equipo de siete; buena coordinación y entorno donde me sentí muy cómodo",
         "Sistema completo de estadísticas con múltiples tipos de gráficos (líneas, radar) y filtros temporales",
         "Autenticación y autorización con JWT y Spring Security",
         "Gestión de usuarios con sistema de bloqueo y seguimiento de coaches",

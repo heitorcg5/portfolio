@@ -78,8 +78,9 @@
       },
       {
         "name": "Gym Workout App",
-        "description": "Full Stack web application for managing and tracking gym routines, including user statistics and metric visualization.",
+        "description": "Full Stack web app for gym routines, user statistics and metrics. Seven-person team using Scrum, Kanban and XP; active participation in a collaborative environment where I felt at ease.",
         "responsibilities": [
+          "Scrum, Kanban and XP in a seven-person team; coordination and communication throughout the project",
           "Complete statistics system with multiple chart types (line, radar) and time filters",
           "Implementation of equipment and muscle group management",
           "Creation of the routine listing and visualization system",
@@ -88,6 +89,7 @@
           "Bug fixes and improvements in existing features"
         ],
         "highlights": [
+          "Agile practices (Scrum, Kanban, XP) with seven people; strong coordination in a team where I felt very comfortable",
           "Complete statistics system with multiple chart types (line, radar) and time filters",
           "Authentication and authorization using JWT and Spring Security",
           "User management with a blocking system and coach tracking",
