@@ -1,0 +1,44 @@
+.languages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.language-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.language-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.language-level {
+  font-size: 1rem;
+  color: #90c2ff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .languages-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .language-card {
+    padding: 1.25rem;
+  }
+}
+
+

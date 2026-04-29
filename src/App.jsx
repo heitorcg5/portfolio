@@ -1,16 +1,16 @@
+ 'use client';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import profileData from './data/profile.json';
-import Hero from './sections/Hero/Hero';
-import About from './sections/About/About';
-import Skills from './sections/Skills/Skills';
-import Projects from './sections/Projects/Projects';
-import Interests from './sections/Interests/Interests';
-import Education from './sections/Education/Education';
-import Languages from './sections/Languages/Languages';
-import Contact from './sections/Contact/Contact';
-import LanguageSwitcher from './common/LanguageSwitcher';
-import './App.css';
+import Hero from './components/sections/Hero/Hero';
+import About from './components/sections/About/About';
+import Skills from './components/sections/Skills/Skills';
+import Projects from './components/sections/Projects/Projects';
+import Interests from './components/sections/Interests/Interests';
+import Education from './components/sections/Education/Education';
+import Languages from './components/sections/Languages/Languages';
+import Contact from './components/sections/Contact/Contact';
+import LanguageSwitcher from './components/common/LanguageSwitcher';
 
 function App() {
   const { t } = useTranslation();

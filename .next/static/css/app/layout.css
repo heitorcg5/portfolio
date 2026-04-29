@@ -1,0 +1,1280 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/index.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0a0f1e;
+  --bg-soft: #111a2e;
+  --text-main: #e9eefb;
+  --text-muted: #9caac8;
+  --accent: #6f86ff;
+  --accent-2: #19d3da;
+  --border: #243354;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(111, 134, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(25, 211, 218, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(129, 71, 194, 0.14), transparent 40%),
+    var(--bg-main);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/App.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.App {
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+  transition: opacity 0.22s ease;
+}
+
+body.lang-switching-out .App {
+  opacity: 0.2;
+}
+
+body.lang-switching-in .App {
+  opacity: 1;
+}
+
+.app-topbar {
+  position: fixed;
+  top: 0.6rem;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  pointer-events: none;
+}
+
+.app-topbar-inner {
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  margin: 0;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.app-mark {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #9db2ff;
+  border: 1px solid rgba(157, 178, 255, 0.42);
+  border-radius: 8px;
+  padding: 0.16rem 0.42rem;
+  font-size: 0.82rem;
+}
+
+.app-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: center;
+  padding-inline: 0.35rem;
+  scroll-padding-inline: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(111, 134, 255, 0.45) transparent;
+}
+
+.app-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.app-nav::-webkit-scrollbar-thumb {
+  background: rgba(111, 134, 255, 0.45);
+  border-radius: 999px;
+}
+
+.app-nav a {
+  position: relative;
+  font-size: 0.78rem;
+  color: rgba(233, 238, 251, 0.8);
+  padding: 0.26rem 0.2rem;
+  line-height: 1.25;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: color 0.28s ease, transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  pointer-events: auto;
+}
+
+.app-nav a::after {
+  content: '';
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6f86ff, #19d3da);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-nav a:hover {
+    color: #f4f7ff;
+    background: rgba(111, 134, 255, 0.15);
+    border-color: rgba(111, 134, 255, 0.25);
+    transform: translateY(-1px);
+  }
+}
+
+.app-nav a.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(111, 134, 255, 0.28), rgba(25, 211, 218, 0.17));
+  border-color: rgba(111, 134, 255, 0.4);
+  box-shadow: 0 0 0 1px rgba(111, 134, 255, 0.2) inset, 0 0 14px rgba(111, 134, 255, 0.25);
+  transform: translateY(-1px);
+  animation: navActivePulse 0.38s ease;
+}
+
+.app-nav a:focus-visible {
+  outline: 2px solid rgba(111, 134, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.app-nav a.active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+@keyframes navActivePulse {
+  0% {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 0 0 0 rgba(111, 134, 255, 0);
+  }
+  55% {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 0 0 3px rgba(111, 134, 255, 0.18);
+  }
+  100% {
+    transform: translateY(-1px) scale(1);
+    box-shadow: 0 0 0 1px rgba(111, 134, 255, 0.2) inset, 0 0 14px rgba(111, 134, 255, 0.25);
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .app-topbar {
+    top: 0.35rem;
+    padding: 0 0.55rem;
+  }
+
+  .app-topbar-inner {
+    width: 100%;
+    max-width: 100%;
+    min-height: 42px;
+    padding: 0.1rem 0.35rem;
+    justify-content: center;
+  }
+
+  .app-mark {
+    display: none;
+  }
+
+  .app-nav {
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-start;
+    padding-inline: 0.2rem;
+    padding-right: 0.2rem;
+    scroll-padding-inline: 0.6rem;
+  }
+
+  .app-nav a {
+    font-size: 0.78rem;
+    padding: 0.34rem 0.3rem;
+    line-height: 1.2;
+  }
+
+  .app-nav a.active {
+    transform: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .app-topbar {
+    top: 0.35rem;
+    padding: 0 0.45rem;
+    justify-content: center;
+  }
+
+  .app-topbar-inner {
+    width: max-content;
+    max-width: calc(100vw - 0.9rem);
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.08rem 0.35rem;
+  }
+
+  .app-mark {
+    display: none;
+  }
+
+  .app-nav {
+    width: auto;
+    justify-content: center;
+    gap: 10px;
+    padding-inline: 0.1rem;
+    scroll-padding-inline: 0.45rem;
+  }
+
+  .app-nav a {
+    font-size: 0.75rem;
+    padding: 0.24rem 0.24rem;
+    line-height: 1.15;
+  }
+}
+
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/common/Badge.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin: 0.25rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.badge-primary {
+  background: rgba(111, 134, 255, 0.16);
+  border-color: rgba(111, 134, 255, 0.35);
+  color: #dfe6ff;
+}
+
+.badge-secondary {
+  background: rgba(187, 113, 255, 0.16);
+  border-color: rgba(187, 113, 255, 0.35);
+  color: #edd7ff;
+}
+
+.badge-success {
+  background: rgba(25, 211, 218, 0.16);
+  border-color: rgba(25, 211, 218, 0.35);
+  color: #d6fdff;
+}
+
+.badge-info {
+  background: rgba(97, 212, 152, 0.16);
+  border-color: rgba(97, 212, 152, 0.35);
+  color: #d7ffe8;
+}
+
+.badge-warning {
+  background: rgba(255, 181, 86, 0.16);
+  border-color: rgba(255, 181, 86, 0.35);
+  color: #ffe8c6;
+}
+
+.badge-default {
+  background: rgba(161, 176, 208, 0.16);
+  border-color: rgba(161, 176, 208, 0.35);
+  color: #dce4f7;
+}
+
+.badge-light {
+  background: rgba(255, 255, 255, 0.12);
+  color: #d9e3f6;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/common/Card.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.card {
+  background: rgba(14, 22, 38, 0.78);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(111, 134, 255, 0.25);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3);
+  border-color: rgba(25, 211, 218, 0.5);
+}
+
+.card:active {
+  transform: translateY(-2px);
+}
+
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/common/LanguageSwitcher.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(12, 18, 32, 0.58);
+}
+
+.language-switcher-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(233, 238, 251, 0.78);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.32rem 0.52rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-switcher-btn:hover {
+  color: #f4f7ff;
+  border-color: rgba(111, 134, 255, 0.3);
+  background: rgba(111, 134, 255, 0.14);
+}
+
+.language-switcher-btn.active {
+  color: #ffffff;
+  border-color: rgba(111, 134, 255, 0.42);
+  background: linear-gradient(135deg, rgba(111, 134, 255, 0.25), rgba(25, 211, 218, 0.15));
+}
+
+.language-switcher-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/common/Section.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.section {
+  padding: 4rem 0;
+  min-height: 50vh;
+  position: relative;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-main);
+  position: relative;
+  padding-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(25, 211, 218, 0.4);
+}
+
+.section-content {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .section-container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/About/About.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  text-align: justify;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Contact/Contact.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.contact-content {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.35rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  background: rgba(18, 28, 47, 0.88);
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(111, 134, 255, 0.32);
+  min-width: 0;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(25, 211, 218, 0.5);
+}
+
+.contact-icon {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: rgba(111, 134, 255, 0.18);
+  border: 1px solid rgba(111, 134, 255, 0.35);
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.contact-value {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-cta {
+  color: #c7d5ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    text-align: left;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-link {
+    padding: 0.9rem 1rem;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .contact-main {
+    flex-basis: calc(100% - 3rem);
+  }
+
+  .contact-value {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-cta {
+    margin-left: auto;
+    padding-left: 3rem;
+  }
+}
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Education/Education.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-card {
+  padding: 2rem;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.education-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+  justify-content: flex-end;
+  max-width: 100%;
+}
+
+.education-availability {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #b8c7ec;
+  line-height: 1.35;
+}
+
+.education-degree {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  flex: 1 1;
+}
+
+.education-institution {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    padding: 1.5rem;
+  }
+  
+  .education-degree {
+    font-size: 1.3rem;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-status-row {
+    justify-content: flex-start;
+  }
+}
+
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Hero/Hero.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+.hero::before {
+  content: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 100%);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  background: rgba(12, 18, 32, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+  align-items: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-left {
+  align-self: center;
+}
+
+.hero-intro {
+  color: #9caac8;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.hero-name-underline {
+  display: inline-block;
+  width: 78px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6f86ff, #19d3da);
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #d3dcf2;
+  font-weight: 500;
+}
+
+.hero-location {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #9caac8;
+}
+
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.hero-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(16, 25, 45, 0.7);
+  color: #d4ddf3;
+  transition: all 0.2s ease;
+}
+
+.hero-social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(25, 211, 218, 0.6);
+  color: #f6f9ff;
+}
+
+.hero-right {
+  align-self: center;
+  padding: 0.6rem 0.35rem 0.6rem 0.7rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-right-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9caac8;
+  margin-bottom: 0.5rem;
+}
+
+.hero-right h2 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.hero-right-text {
+  color: #c1cbe4;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.hero-links {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: rgba(17, 26, 46, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.95rem;
+}
+
+.hero-link-download {
+  background: rgba(111, 134, 255, 0.23);
+  font-weight: 600;
+}
+
+.hero-link:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #243354;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-link:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-container {
+    padding: 1.3rem;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    text-align: left;
+    padding: 0;
+  }
+
+  .hero-right {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 1rem;
+  }
+  
+  .hero-links {
+    width: 100%;
+  }
+  
+  .hero-link {
+    width: auto;
+  }
+}
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Interests/Interests.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+
+.interest-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.interest-area {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.interest-description {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .interest-card {
+    padding: 1.5rem;
+  }
+}
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Languages/Languages.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.languages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.language-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.language-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.language-level {
+  font-size: 1rem;
+  color: #90c2ff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .languages-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .language-card {
+    padding: 1.25rem;
+  }
+}
+
+
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Projects/ProjectCard.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.32rem 0.68rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.project-status-icon {
+  display: inline-block;
+}
+
+.project-status-icon-spinning {
+  animation: project-status-spin 1.6s linear infinite;
+  transform-origin: center;
+}
+
+.project-status-done {
+  color: #d5ffe8;
+  background: rgba(40, 199, 111, 0.16);
+  border-color: rgba(40, 199, 111, 0.35);
+}
+
+.project-status-progress {
+  color: #ffe8c3;
+  background: rgba(255, 173, 51, 0.17);
+  border-color: rgba(255, 173, 51, 0.35);
+}
+
+.project-header {
+  display: block;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.project-type {
+  display: inline-flex;
+  margin-top: 0.6rem;
+}
+
+.project-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-started {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: #9fb0d8;
+  font-weight: 500;
+}
+
+.project-section {
+  margin-top: 0.5rem;
+}
+
+.project-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #dbe5ff;
+  margin-bottom: 0.5rem;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #c1cbe4;
+  line-height: 1.6;
+}
+
+.project-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-2);
+  font-weight: bold;
+}
+
+.project-highlights li::before {
+  content: '★';
+  color: #f39c12;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-repo-section {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.project-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(111, 134, 255, 0.35);
+  background: rgba(111, 134, 255, 0.14);
+  color: #dfe6ff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.project-repo-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(25, 211, 218, 0.5);
+  color: #ffffff;
+  background: rgba(25, 211, 218, 0.16);
+}
+
+@keyframes project-status-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-name {
+    font-size: 1.3rem;
+  }
+}
+
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Projects/Projects.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/sections/Skills/Skills.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.skill-category {
+  background: rgba(14, 22, 38, 0.86);
+  padding: 1.25rem;
+  border-radius: 14px;
+  border-left: 4px solid var(--accent);
+  border: 1px solid rgba(111, 134, 255, 0.24);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  min-height: 100%;
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.skill-category-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.skill-category-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d9e3ff;
+  background: rgba(111, 134, 255, 0.18);
+  border: 1px solid rgba(111, 134, 255, 0.35);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-badges .badge {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skill-category {
+    padding: 1rem;
+  }
+  
+  .skill-category-title {
+    font-size: 1.1rem;
+  }
+}
+
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+
+

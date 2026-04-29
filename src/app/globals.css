@@ -1,0 +1,15 @@
+@import '../index.css';
+@import '../App.css';
+@import '../components/common/Badge.css';
+@import '../components/common/Card.css';
+@import '../components/common/LanguageSwitcher.css';
+@import '../components/common/Section.css';
+@import '../components/sections/About/About.css';
+@import '../components/sections/Contact/Contact.css';
+@import '../components/sections/Education/Education.css';
+@import '../components/sections/Hero/Hero.css';
+@import '../components/sections/Interests/Interests.css';
+@import '../components/sections/Languages/Languages.css';
+@import '../components/sections/Projects/ProjectCard.css';
+@import '../components/sections/Projects/Projects.css';
+@import '../components/sections/Skills/Skills.css';
