@@ -50,6 +50,9 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  verification: {
+    google: "YkL3S2uHdrdncfBFBDqd-239ru2lSYdsN8FZ_xBTU0g"
+  }
 };
 
 export const viewport = {
