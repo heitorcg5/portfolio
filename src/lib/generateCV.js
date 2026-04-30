@@ -1,4 +1,4 @@
-import { pdf, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { pdf, renderToBuffer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 // Crear estilos para el PDF
 const styles = StyleSheet.create({
@@ -272,5 +272,9 @@ export const generateCV = async (profile) => {
     console.error('Error al generar el CV:', error);
     alert('Error al generar el CV. Por favor, intenta de nuevo.');
   }
+};
+
+export const createCVPdfBuffer = async (profile) => {
+  return renderToBuffer(<CVDocument profile={profile} />);
 };
 

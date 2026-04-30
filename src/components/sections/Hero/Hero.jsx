@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -6,9 +8,28 @@ const Hero = ({ personal, profile }) => {
   const { t } = useTranslation();
 
   const handleDownloadCV = async () => {
-    if (profile) {
-      const { generateCV } = await import('../../../lib/generateCV.jsx');
-      generateCV(profile);
+    try {
+      // First try client-side PDF generation to avoid server runtime issues.
+      if (profile) {
+        const { generateCV } = await import('@/lib/generateCV.jsx');
+        await generateCV(profile);
+        return;
+      }
+
+      const response = await fetch('/api/cv');
+      if (!response.ok) throw new Error(`CV download failed: ${response.status}`);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `CV_${personal.name.replace(/\s+/g, '_')}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+      alert(error instanceof Error ? error.message : t('cv.errors.generateRetry'));
     }
   };
 
@@ -47,7 +68,7 @@ const Hero = ({ personal, profile }) => {
               <a href="#projects" className="hero-link">
                 {t('hero.viewProjects')}
               </a>
-              <button onClick={handleDownloadCV} className="hero-link hero-link-download">
+              <button type="button" onClick={handleDownloadCV} className="hero-link hero-link-download">
                 <FaFileDownload aria-hidden="true" />
                 <span>{t('cv.download')}</span>
               </button>
