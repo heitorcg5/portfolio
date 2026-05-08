@@ -1,5 +1,5 @@
 import React from 'react';
-import { pdf, Document, Page, Text, View, StyleSheet, Link } from '@react-pdf/renderer';
+import { pdf, Document, Page, Text, View, StyleSheet, Link, Image } from '@react-pdf/renderer';
 import i18n from '../i18n';
 
 /**
@@ -51,6 +51,27 @@ const styles = StyleSheet.create({
     padding: 10,
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8,
+  },
+  cvPhotoWrap: {
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  /** Marco circular recortando un poco más arriba del bitmap (cabeza completa). */
+  cvPhotoClip: {
+    width: 102,
+    height: 102,
+    borderRadius: 51,
+    border: '2 solid #e5e7eb',
+    overflow: 'hidden',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  /** Más alto que el círculo: se ve la parte superior de la foto (cabeza) y recorta algo abajo. */
+  cvPhoto: {
+    width: 108,
+    height: 136,
+    objectFit: 'cover',
+    objectPosition: 'center 24%',
   },
   rightCol: {
     width: '70%',
@@ -275,6 +296,20 @@ const BULLET_MAX = 220;
 
 const getCvT = (lang) => i18n.getFixedT(lang || 'es');
 
+const DEFAULT_CV_PHOTO_PATH = '/cv-photo.JPG';
+
+/** URL absoluta para que @react-pdf pueda cargar la imagen en el navegador. */
+const resolveCvPhotoSrc = (profile) => {
+  const path = (profile?.personal?.photo ?? DEFAULT_CV_PHOTO_PATH).trim();
+  if (!path) return '';
+  if (/^https?:\/\//i.test(path)) return path;
+  if (typeof window === 'undefined') {
+    return path.startsWith('/') ? path : `/${path}`;
+  }
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return `${window.location.origin}${normalized}`;
+};
+
 const toShortLink = (url) => {
   if (!url) return '';
   try {
@@ -327,7 +362,7 @@ const cvProjectStatusLabel = (status, t, projectIndex) => {
   });
 };
 
-const CVDocument = ({ profile, lang }) => {
+const CVDocument = ({ profile, lang, photoSrc }) => {
   const t = getCvT(lang);
   const skills = profile.skills || {};
 
@@ -386,6 +421,13 @@ const CVDocument = ({ profile, lang }) => {
       <Page size="A4" wrap style={styles.page}>
         <View style={styles.layoutRow}>
           <View style={styles.leftCol}>
+            {photoSrc ? (
+              <View style={styles.cvPhotoWrap}>
+                <View style={styles.cvPhotoClip}>
+                  <Image src={photoSrc} style={styles.cvPhoto} />
+                </View>
+              </View>
+            ) : null}
             <View style={styles.sectionBlock}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>{t('cv.sections.contact', { defaultValue: t('contact.title') })}</Text>
@@ -537,7 +579,10 @@ export const generateCV = async (profile) => {
   const t = getCvT(lang);
 
   try {
-    const blob = await pdf(<CVDocument profile={profile} lang={lang} />).toBlob();
+    const photoSrc = resolveCvPhotoSrc(profile);
+    const blob = await pdf(
+      <CVDocument profile={profile} lang={lang} photoSrc={photoSrc} />
+    ).toBlob();
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
