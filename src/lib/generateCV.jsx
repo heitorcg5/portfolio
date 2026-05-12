@@ -299,6 +299,8 @@ const SYNAPSE_CV_HIGHLIGHTS = 4;
 const getCvT = (lang) => i18n.getFixedT(lang || 'es');
 
 const DEFAULT_CV_PHOTO_PATH = '/cv-photo.JPG';
+const CV_PHOTO_OPTIMIZED_MAX = 384;
+const CV_PHOTO_JPEG_QUALITY = 0.9;
 
 /** URL absoluta para que @react-pdf pueda cargar la imagen en el navegador. */
 const resolveCvPhotoSrc = (profile) => {
@@ -310,6 +312,41 @@ const resolveCvPhotoSrc = (profile) => {
   }
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${window.location.origin}${normalized}`;
+};
+
+const loadImageElement = (src) =>
+  new Promise((resolve, reject) => {
+    const image = new window.Image();
+    image.decoding = 'async';
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error('Failed to load CV photo'));
+    image.src = src;
+  });
+
+/** Reduce la foto embebida en el PDF sin cambiar el tamaño visual del círculo. */
+const optimizePhotoForPdf = async (src) => {
+  if (!src || typeof window === 'undefined') return src;
+
+  try {
+    const image = await loadImageElement(src);
+    const scale = Math.min(
+      CV_PHOTO_OPTIMIZED_MAX / image.width,
+      CV_PHOTO_OPTIMIZED_MAX / image.height,
+      1
+    );
+    const width = Math.max(1, Math.round(image.width * scale));
+    const height = Math.max(1, Math.round(image.height * scale));
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+    if (!context) return src;
+
+    context.drawImage(image, 0, 0, width, height);
+    return canvas.toDataURL('image/jpeg', CV_PHOTO_JPEG_QUALITY);
+  } catch {
+    return src;
+  }
 };
 
 const toShortLink = (url) => {
@@ -621,7 +658,7 @@ export const generateCV = async (profile) => {
   const t = getCvT(lang);
 
   try {
-    const photoSrc = resolveCvPhotoSrc(profile);
+    const photoSrc = await optimizePhotoForPdf(resolveCvPhotoSrc(profile));
     const blob = await pdf(
       <CVDocument profile={profile} lang={lang} photoSrc={photoSrc} />
     ).toBlob();
