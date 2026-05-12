@@ -237,28 +237,28 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   educationItem: {
-    marginBottom: 5,
+    marginBottom: 4,
   },
   educationDegree: {
     fontFamily: 'Helvetica-Bold',
-    fontSize: 8.2,
-    color: '#111827',
-    lineHeight: 1.22,
-    marginBottom: 1,
+    fontSize: 8.6,
+    color: '#1f2937',
+    lineHeight: 1.33,
+    marginBottom: 2,
   },
   educationInstitution: {
     fontFamily: 'Helvetica',
-    fontSize: 7.8,
-    color: '#374151',
-    lineHeight: 1.2,
+    fontSize: 8.6,
+    color: '#1f2937',
+    lineHeight: 1.33,
     marginBottom: 1,
   },
   educationStatus: {
     fontFamily: 'Helvetica',
-    fontSize: 7.5,
-    color: '#4b5563',
-    lineHeight: 1.25,
-    marginTop: 2,
+    fontSize: 8.6,
+    color: '#1f2937',
+    lineHeight: 1.33,
+    marginTop: 0,
   },
   languageItem: {
     marginBottom: 2,
@@ -292,7 +292,9 @@ const compactText = (text, maxChars = 150) => {
 };
 
 const PROJECT_DESC_MAX = 500;
+const SYNAPSE_DESC_MAX = 400;
 const BULLET_MAX = 220;
+const SYNAPSE_CV_HIGHLIGHTS = 4;
 
 const getCvT = (lang) => i18n.getFixedT(lang || 'es');
 
@@ -375,24 +377,42 @@ const CVDocument = ({ profile, lang, photoSrc }) => {
     const responsibilityBullets = sourceLines.slice(0, MAX_PROJECT_BULLETS);
     const techItems = unique(project.technologies || []).filter(Boolean).slice(0, MAX_TECH_ITEMS);
 
-    const translatedResponsibilities = responsibilityBullets.map((line, bulletIndex) =>
-      useHighlightsForCv
-        ? t(`projects.items.${projectIndex}.highlights.${bulletIndex}`, {
-            defaultValue: line,
+    const translatedResponsibilities = (() => {
+      if (projectIndex === 0 && useHighlightsForCv) {
+        const synapseBullets = [];
+        for (let i = 0; i < SYNAPSE_CV_HIGHLIGHTS; i++) {
+          const line = t(`cv.synapse.highlights.${i}`, { defaultValue: '' });
+          if (line) synapseBullets.push(line);
+        }
+        if (synapseBullets.length > 0) return synapseBullets;
+      }
+
+      return responsibilityBullets.map((line, bulletIndex) =>
+        useHighlightsForCv
+          ? t(`projects.items.${projectIndex}.highlights.${bulletIndex}`, {
+              defaultValue: line,
+            })
+          : t(`projects.items.${projectIndex}.responsibilities.${bulletIndex}`, {
+              defaultValue: line,
+            })
+      );
+    })();
+
+    const projectDescription =
+      projectIndex === 0
+        ? t('cv.synapse.description', {
+            defaultValue: t(`projects.items.${projectIndex}.description`, {
+              defaultValue: project.description,
+            }),
           })
-        : t(`projects.items.${projectIndex}.responsibilities.${bulletIndex}`, {
-            defaultValue: line,
-          })
-    );
+        : t(`projects.items.${projectIndex}.description`, { defaultValue: project.description });
 
     return {
       ...project,
       translatedName: t(`projects.items.${projectIndex}.name`, { defaultValue: project.name }),
       shortDescription: compactText(
-        normalizeWhitespace(
-          t(`projects.items.${projectIndex}.description`, { defaultValue: project.description })
-        ),
-        PROJECT_DESC_MAX
+        normalizeWhitespace(projectDescription),
+        projectIndex === 0 ? SYNAPSE_DESC_MAX : PROJECT_DESC_MAX
       ),
       responsibilityBullets: translatedResponsibilities,
       techLine: joinBullet(techItems),
@@ -439,6 +459,13 @@ const CVDocument = ({ profile, lang, photoSrc }) => {
                 </Link>
               ) : null}
 
+              <Text style={styles.contactLabel}>{t('cv.header.phone')}</Text>
+              {profile.links?.phone ? (
+                <Link src={`tel:${profile.links.phone.replace(/\s+/g, '')}`} style={styles.contactLink}>
+                  {profile.links.phone}
+                </Link>
+              ) : null}
+
               <Text style={styles.contactLabel}>{t('cv.header.github')}</Text>
               {profile.links?.github ? (
                 <Link src={profile.links.github} style={styles.contactLink}>
@@ -480,27 +507,6 @@ const CVDocument = ({ profile, lang, photoSrc }) => {
               ))}
             </View>
 
-            <View style={styles.sectionBlock}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>{t('cv.sections.education')}</Text>
-              </View>
-              {(profile.education || []).map((edu, index) => (
-                <View key={index} style={styles.educationItem}>
-                  <Text style={styles.educationDegree}>
-                    {t(`education.items.${index}.degree`, { defaultValue: edu.degree })}
-                  </Text>
-                  <Text style={styles.educationInstitution}>
-                    {t(`education.items.${index}.institution`, { defaultValue: edu.institution })}
-                  </Text>
-                  <Text style={styles.educationStatus}>
-                    {t(`education.items.${index}.status`, { defaultValue: edu.status })}
-                    {' · '}
-                    {t('education.availability')}
-                  </Text>
-                </View>
-              ))}
-            </View>
-
             {profile.languages && profile.languages.length > 0 ? (
               <View style={styles.sectionBlock}>
                 <View style={styles.sectionHeader}>
@@ -512,6 +518,19 @@ const CVDocument = ({ profile, lang, photoSrc }) => {
                       {t(`languages.items.${index}.language`, { defaultValue: lang.language })}: {t(`languages.items.${index}.level`, { defaultValue: lang.level })}
                     </Text>
                   </View>
+                ))}
+              </View>
+            ) : null}
+
+            {(profile.cvOtherInfo || []).length > 0 ? (
+              <View style={styles.sectionBlock}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>{t('cv.sections.otherInfo')}</Text>
+                </View>
+                {profile.cvOtherInfo.map((itemKey, index) => (
+                  <Text key={index} style={styles.lineText}>
+                    • {t(`cv.otherInfo.${itemKey}`, { defaultValue: itemKey })}
+                  </Text>
                 ))}
               </View>
             ) : null}
@@ -528,6 +547,29 @@ const CVDocument = ({ profile, lang, photoSrc }) => {
               </View>
               <Text style={styles.summaryText}>{cvAboutText}</Text>
             </View>
+
+            {(profile.education || []).length > 0 ? (
+              <View style={styles.sectionBlock}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>{t('cv.sections.education')}</Text>
+                </View>
+                {(profile.education || []).map((edu, index) => (
+                  <View key={index} style={styles.educationItem}>
+                    <Text style={styles.educationDegree}>
+                      {t(`education.items.${index}.degree`, { defaultValue: edu.degree })}
+                    </Text>
+                    <Text style={styles.educationInstitution}>
+                      {t(`education.items.${index}.institution`, { defaultValue: edu.institution })}
+                    </Text>
+                    <Text style={styles.educationStatus}>
+                      {t(`education.items.${index}.status`, { defaultValue: edu.status })}
+                      {' · '}
+                      {t('education.availability')}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+            ) : null}
 
             <View style={styles.sectionBlock}>
               <View style={styles.sectionHeader}>

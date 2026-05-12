@@ -162,11 +162,13 @@
     "intro": "I am open to junior opportunities, collaborations, and projects where I can contribute value from day one.",
     "items": {
       "email": "Email",
+      "phone": "Phone",
       "github": "GitHub",
       "linkedin": "LinkedIn"
     },
     "cta": {
       "email": "Send message",
+      "phone": "Call",
       "github": "View repositories",
       "linkedin": "Connect"
     }
@@ -176,6 +178,7 @@
     "aboutText": "Software Engineering student with hands-on experience building full-stack applications end to end, from data model to frontend, with a strong focus on architecture and code quality. Beyond academic projects, I build personal projects to explore new technologies — currently focused on cybersecurity and AI applied to development. I am looking for software development internships where I can contribute and learn in a real professional environment.",
     "header": {
       "email": "Email",
+      "phone": "Phone",
       "github": "GitHub",
       "linkedin": "LinkedIn",
       "website": "Website"
@@ -184,8 +187,22 @@
       "about": "About",
       "projects": "Projects",
       "skills": "Skills",
-      "education": "Education",
-      "languages": "Languages"
+      "education": "Educational background",
+      "languages": "Languages",
+      "otherInfo": "Other relevant information"
+    },
+    "otherInfo": {
+      "drivingLicense": "Driver's license",
+      "geographicAvailability": "Geographic mobility across Spain and internationally"
+    },
+    "synapse": {
+      "description": "Personal web application for notes, links, and snippets we tend to leave for later and otherwise lose. The flow helps classify and retrieve that content with little friction, while notifications flag pending items and unreviewed material. Actively evolving, with planned features such as flashcards linked to the folders users define.",
+      "highlights": [
+        "Spring Boot + React/TypeScript (Vite) stack; capture → inbox → processing → knowledge flow.",
+        "Product-focused web UX: responsive UI, routing, coherent state, and i18n.",
+        "PostgreSQL + Flyway, inbox/knowledge/notification domain; deployment with Docker Compose.",
+        "Resilient async Ollama pipeline; JWT, secrets handling, and API errors with trace id without leaking internals."
+      ]
     },
     "skills": {
       "languages": "Languages",

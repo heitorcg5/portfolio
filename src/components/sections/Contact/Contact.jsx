@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaPhone } from 'react-icons/fa';
 import Section from '../../common/Section';
 
 const Contact = ({ links }) => {
@@ -14,6 +14,14 @@ const Contact = ({ links }) => {
       href: links.email ? `mailto:${links.email}` : null,
       cta: t('contact.cta.email'),
       Icon: FaEnvelope,
+    },
+    {
+      id: 'phone',
+      label: t('contact.items.phone'),
+      value: links.phone,
+      href: links.phone ? `tel:${links.phone.replace(/\s+/g, '')}` : null,
+      cta: t('contact.cta.phone'),
+      Icon: FaPhone,
     },
     {
       id: 'github',
@@ -34,7 +42,7 @@ const Contact = ({ links }) => {
   ].filter((item) => item.value && item.href);
 
   const getDisplayValue = (item) => {
-    if (item.id === 'email') return item.value;
+    if (item.id === 'email' || item.id === 'phone') return item.value;
 
     try {
       const url = new URL(item.value);
@@ -50,7 +58,7 @@ const Contact = ({ links }) => {
         <p className="contact-text">{t('contact.intro')}</p>
         <div className="contact-links">
           {contactItems.map((item) => {
-            const isExternal = item.id !== 'email';
+            const isExternal = item.id !== 'email' && item.id !== 'phone';
             const Icon = item.Icon;
 
             return (

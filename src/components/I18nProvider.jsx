@@ -1,7 +1,14 @@
 'use client';
 
-import '../i18n';
+import { useEffect } from 'react';
+import { syncClientLanguage } from '../i18n';
 
-const I18nProvider = ({ children }) => children;
+const I18nProvider = ({ children }) => {
+  useEffect(() => {
+    syncClientLanguage();
+  }, []);
+
+  return children;
+};
 
 export default I18nProvider;

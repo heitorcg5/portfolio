@@ -1,4 +1,4 @@
- 'use client';
+'use client';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import profileData from './data/profile.json';

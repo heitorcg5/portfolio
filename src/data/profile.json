@@ -178,6 +178,10 @@
       "description": "Uso consciente de herramientas de IA para aumentar la productividad, apoyar el diseño de soluciones, generar pruebas y mejorar la calidad del código."
     }
   ],
+  "cvOtherInfo": [
+    "drivingLicense",
+    "geographicAvailability"
+  ],
   "languages": [
     {
       "language": "Español",
@@ -196,6 +200,7 @@
     "github": "https://github.com/heitorcg5",
     "linkedin": "https://www.linkedin.com/in/heitorcambregarcia/",
     "email": "heitorcambre@gmail.com",
+    "phone": "+34 608 07 31 37",
     "portfolio": "https://heitorcambregarcia.com/"
   }
 }

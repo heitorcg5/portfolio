@@ -5,10 +5,9 @@ import enTranslation from './en/translation.json';
 
 const STORAGE_KEY = 'portfolio_lang';
 const supportedLanguages = ['es', 'en'];
+const DEFAULT_LANGUAGE = 'es';
 
-const getInitialLanguage = () => {
-  if (typeof window === 'undefined') return 'es';
-
+const getClientLanguage = () => {
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored && supportedLanguages.includes(stored)) return stored;
 
@@ -25,7 +24,7 @@ const getInitialLanguage = () => {
     }
   }
 
-  return 'es';
+  return DEFAULT_LANGUAGE;
 };
 
 i18n
@@ -35,13 +34,22 @@ i18n
       es: { translation: esTranslation },
       en: { translation: enTranslation },
     },
-    lng: getInitialLanguage(),
-    fallbackLng: 'es',
+    lng: DEFAULT_LANGUAGE,
+    fallbackLng: DEFAULT_LANGUAGE,
     supportedLngs: supportedLanguages,
     interpolation: {
       escapeValue: false,
     },
   });
+
+export const syncClientLanguage = () => {
+  if (typeof window === 'undefined') return;
+
+  const preferredLanguage = getClientLanguage();
+  if (preferredLanguage !== i18n.language) {
+    void i18n.changeLanguage(preferredLanguage);
+  }
+};
 
 i18n.on('languageChanged', (lng) => {
   if (typeof window !== 'undefined' && supportedLanguages.includes(lng)) {

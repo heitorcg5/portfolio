@@ -162,11 +162,13 @@
     "intro": "Estoy abierto a oportunidades junior, colaboraciones y proyectos donde pueda aportar valor desde el primer día.",
     "items": {
       "email": "Correo",
+      "phone": "Teléfono",
       "github": "GitHub",
       "linkedin": "LinkedIn"
     },
     "cta": {
       "email": "Enviar mensaje",
+      "phone": "Llamar",
       "github": "Ver repositorios",
       "linkedin": "Conectar"
     }
@@ -176,6 +178,7 @@
     "aboutText": "Estudiante de Ingeniería del Software con experiencia práctica desarrollando aplicaciones full-stack de principio a fin, desde el modelo de datos hasta el frontend, cuidando la arquitectura y la calidad del código. Más allá de los proyectos académicos, construyo proyectos propios para explorar nuevas tecnologías — actualmente con foco en ciberseguridad e IA aplicada al desarrollo. Busco prácticas en desarrollo de software donde pueda contribuir y aprender en un entorno profesional real.",
     "header": {
       "email": "Correo",
+      "phone": "Teléfono",
       "github": "GitHub",
       "linkedin": "LinkedIn",
       "website": "Sitio web"
@@ -184,8 +187,22 @@
       "about": "Sobre mí",
       "projects": "Proyectos",
       "skills": "Habilidades",
-      "education": "Educación",
-      "languages": "Idiomas"
+      "education": "Formación educativa",
+      "languages": "Idiomas",
+      "otherInfo": "Otros datos de interés"
+    },
+    "otherInfo": {
+      "drivingLicense": "Carnet de conducir",
+      "geographicAvailability": "Disponibilidad geográfica en España e internacional"
+    },
+    "synapse": {
+      "description": "Aplicación web personal para notas, enlaces y fragmentos que solemos dejar «para después» y acaban perdiéndose. El flujo clasifica y recupera esa información con poca fricción; las notificaciones recuerdan pendientes y material sin revisar. Sigue en evolución activa, con funcionalidades previstas como flashcards asociadas a las carpetas que define el usuario.",
+      "highlights": [
+        "Stack Spring Boot + React/TypeScript (Vite); flujo captura → bandeja → procesamiento → conocimiento.",
+        "Producto web: UI responsive, routing, estado coherente e i18n.",
+        "PostgreSQL + Flyway, dominio bandeja/conocimiento/notificaciones; despliegue con Docker Compose.",
+        "Pipeline asíncrono con Ollama resiliente; JWT, secretos y errores API con trace id sin filtrar al cliente."
+      ]
     },
     "skills": {
       "languages": "Lenguajes",
